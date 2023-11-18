@@ -19,11 +19,6 @@ function App() {
 
         <div className='Settings'>
           <h1>This is the Settings Area</h1>
-          {/* <body>
-            Title: <input id="title" />
-            <button id="btn" type="button">Set</button>
-            <script src="./renderer.js"></script>
-          </body> */}
           <button className='addButton'>Add</button>
         </div>
       </div>
