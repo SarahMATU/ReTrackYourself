@@ -1,6 +1,9 @@
 import './App.css';
+import React from 'react';
 
-function App() {
+let Timer = "../src/components/timer/timer.js"
+
+export default function App() {
 
   return (
     <div className="App">
@@ -19,16 +22,14 @@ function App() {
 
         <div className='Settings'>
           <h1>This is the Settings Area</h1>
-          <button className='addButton'>Add</button>
-        </div>
+          <a href= {Timer} target = "_blank" >
+            <button className='addButton'>Timer add</button>
+          </a>
       </div>
-
-      <div className='Footer'>
+    </div>
+    <div className='Footer'>
         <h1>This is the Footer</h1>
       </div>
-
     </div>
   );
 }
-
-export default App;
