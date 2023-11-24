@@ -1,71 +1,88 @@
 .App {
   text-align: center;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #7084ab;
 }
 
 .Header {
-  background-color: #203cf2;
+  background-color: #626ec0;
+  border-radius: 10px;
   padding: 8px;
 }
 
 .Body {
-  height: 350px;
-  width:95%;
+  height: 471px;
+  width: 99%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
   padding: 8px;
 }
 
 .Widgets {
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 50%;
+  margin-right: 15px;
   border-radius: 10px;
   overflow-y: scroll;
   flex-direction: column;
-  background-color: #89c9b4;
+  justify-content: space-evenly;
+  background-color: #899ec9;
   padding: 8px;
   display: flex;
 }
 
 .Timer {
-
-  background-color: #89c9b4;
+  background-color: #899ec9;
   padding: 8px;
-  flex-direction: column;
-  
+}
+
+.Timer:hover {
+  background-color: #67799d;
 }
 
 .ToDO {
-  background-color: #89c9b4;
+  background-color: #899ec9;
   padding: 8px;
 }
 
+.ToDO:hover {
+  background-color: #67799d;
+}
+
 .Reminder {
-  background-color: #89c9b4;
+  background-color: #899ec9;
   padding: 8px;
+}
+
+.Reminder:hover {
+  background-color: #67799d;
 }
 
 .Settings {
   border-radius: 10px;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 50%;
+  margin-right: 15px;
   display: flex;
   flex-direction: column;
-  background-color: #89c9b4;
+  background-color: #899ec9;
   padding: 8px;
 }
 
 .Footer {
-  background-color: #523c34;
+  background-color: #626ec0;
   padding: 8px;
+  border-radius: 10px;
 }
 
 .addButton {
   border-radius: 80px;
-  padding: 20px 20px;
-  background-color: coral;
+  padding: 20px 30px;
+  background-color: rgb(67, 52, 121);
   border: none;
   font-size: 20px;
 }
@@ -73,7 +90,7 @@
 .addButton:hover {
   border-radius: 80px;
   padding: 20px 20px;
-  background-color: rgb(192, 88, 50);
+  background-color: rgb(42, 32, 79);
   border: none;
   font-size: 20px;
 }

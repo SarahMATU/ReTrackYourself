@@ -9,26 +9,28 @@ export default function App() {
     <div className="App">
 
       <div className='Header'>
-        <h1>This is the Header</h1>
+        <p>Header</p>
       </div>
 
       <div className='Body'>
         <div className='Widgets'>
-          <div className='Timer'>Timer
-          </div>
+          <div className='Timer'>Timer</div>
           <div className='ToDo'>To-Do</div>
           <div className='Reminder'>Reminder</div>
         </div>
 
         <div className='Settings'>
-          <h1>This is the Settings Area</h1>
+          <p>Set the time you want for this study session</p>
+          
+          <input type="number"></input>
+          <button>Set Time:</button>
           <a href= {Timer} target = "_blank" >
             <button className='addButton'>Timer add</button>
           </a>
       </div>
     </div>
     <div className='Footer'>
-        <h1>This is the Footer</h1>
+        <p>Footer</p>
       </div>
     </div>
   );

@@ -1,14 +1,17 @@
 const path = require('path');
 
-const { app, BrowserWindow} = require('electron');
+const { app, BrowserWindow } = require('electron');
 const isDev = require('electron-is-dev');
 
-function createWindow() {
+function createMainWindow() {
     // Create the browser window.
     const win = new BrowserWindow({
+        maxWidth: 800,
         width: 800,
-        height: 600,
+        maxHeight: 700,
+        height: 700,
         webPreferences: {
+            nativeWindowOpen: true,
             nodeIntegration: true
         },
     });
@@ -20,13 +23,16 @@ function createWindow() {
             ? 'http://localhost:3000'
             : `file://${path.join(__dirname, '../src/App.js')}`
     );
+
+    win.webContents.openDevTools({ mode: "detach" })
+
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
-    createWindow()
+    createMainWindow()
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
@@ -40,6 +46,6 @@ app.on('window-all-closed', () => {
 
 app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow();
+        createMainWindow();
     }
 });
