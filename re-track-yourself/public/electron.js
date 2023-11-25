@@ -1,14 +1,16 @@
 const path = require('path');
-
 const { app, BrowserWindow } = require('electron');
 const isDev = require('electron-is-dev');
 
 function createMainWindow() {
     // Create the browser window.
     const win = new BrowserWindow({
+        title: "Re-Track Yourself",
         maxWidth: 800,
+        minWidth: 800,
         width: 800,
         maxHeight: 700,
+        minHeight: 700,
         height: 700,
         webPreferences: {
             nativeWindowOpen: true,
@@ -25,8 +27,28 @@ function createMainWindow() {
     );
 
     win.webContents.openDevTools({ mode: "detach" })
-
+    
 }
+
+//  export default function createTimerWindow(){
+
+//     const winTimer = new BrowserWindow({
+//         maxWidth: 200,
+//         width: 200,
+//         maxHeight: 300,
+//         height: 300,
+//         webPreferences: {
+//             nativeWindowOpen: true,
+//             nodeIntegration: true
+//         },
+//     });
+
+    //winTimer.removeMenu()
+    // and load the index.html of the app.
+    // win.loadFile("index.html");
+//     winTimer.loadURL(`file://${path.join(__dirname, '../src/components/timer/timer.js')}`
+//     );
+// }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

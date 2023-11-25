@@ -14,9 +14,16 @@ export default function App() {
 
       <div className='Body'>
         <div className='Widgets'>
+
           <div className='Timer'>Timer</div>
+          <img className='widgetImg'></img>
+
           <div className='ToDo'>To-Do</div>
+          <img className='widgetImg'></img>
+
           <div className='Reminder'>Reminder</div>
+          <img className='widgetImg'></img>
+
         </div>
 
         <div className='Settings'>

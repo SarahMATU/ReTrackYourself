@@ -2,6 +2,8 @@
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #7084ab;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .Header {
@@ -77,6 +79,13 @@
   background-color: #626ec0;
   padding: 8px;
   border-radius: 10px;
+}
+
+.widgetImg{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+
 }
 
 .addButton {
