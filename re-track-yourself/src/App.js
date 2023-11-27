@@ -1,12 +1,18 @@
 import './App.css';
 import React from 'react';
 
-let Timer = "../src/components/timer/timer.js"
+class App extends React.Component{
+  openTimerWindow = () => {
+    window.electron.openTimerWindow();
+  };
 
-export default function App() {
+  openTodoWindow = () => {
+    window.electron.openTodoWindow();
+  };
 
-  return (
-    <div className="App">
+  render() {
+    return (
+      <div className="App">
 
       <div className='Header'>
         <p>Header</p>
@@ -16,29 +22,34 @@ export default function App() {
         <div className='Widgets'>
 
           <div className='Timer'>Timer</div>
-          <img className='widgetImg'></img>
+          <img className='widgetImg' src="../src/components/timer/timerPlace.jpg" alt="timer"></img>
 
-          <div className='ToDo'>To-Do</div>
-          <img className='widgetImg'></img>
+          <div className='Todo'>To-Do</div>
+          <img className='widgetImg' src="src/components/timer/timerPlace.jpg" alt='todo'></img>
 
           <div className='Reminder'>Reminder</div>
-          <img className='widgetImg'></img>
+          <img className='widgetImg' src="src\components\timer\timerPlace.jpg" alt='reminder'></img>
 
         </div>
 
         <div className='Settings'>
           <p>Set the time you want for this study session</p>
+          <div>
+            <input type="number"></input>
+            <button>Set Time:</button>
+          </div>
           
-          <input type="number"></input>
-          <button>Set Time:</button>
-          <a href= {Timer} target = "_blank" >
-            <button className='addButton'>Timer add</button>
-          </a>
+          <button className='addButton' onClick={this.openTimerWindow}>Timer add</button>
+          <button className='addButton' onClick={this.openTodoWindow}>To-Do add</button>
+
       </div>
     </div>
     <div className='Footer'>
         <p>Footer</p>
       </div>
     </div>
-  );
+    )
+  }
 }
+
+export default App;

@@ -1,5 +1,5 @@
 const path = require('path');
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const isDev = require('electron-is-dev');
 
 function createMainWindow() {
@@ -14,7 +14,8 @@ function createMainWindow() {
         height: 700,
         webPreferences: {
             nativeWindowOpen: true,
-            nodeIntegration: true
+            nodeIntegration: true,
+            preload: path.join(__dirname, 'preload.js')
         },
     });
 
@@ -29,26 +30,6 @@ function createMainWindow() {
     win.webContents.openDevTools({ mode: "detach" })
     
 }
-
-//  export default function createTimerWindow(){
-
-//     const winTimer = new BrowserWindow({
-//         maxWidth: 200,
-//         width: 200,
-//         maxHeight: 300,
-//         height: 300,
-//         webPreferences: {
-//             nativeWindowOpen: true,
-//             nodeIntegration: true
-//         },
-//     });
-
-    //winTimer.removeMenu()
-    // and load the index.html of the app.
-    // win.loadFile("index.html");
-//     winTimer.loadURL(`file://${path.join(__dirname, '../src/components/timer/timer.js')}`
-//     );
-// }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -71,3 +52,45 @@ app.on('activate', () => {
         createMainWindow();
     }
 });
+
+ipcMain.on('open-timer-window', () => {
+    const winTimer = new BrowserWindow({
+        maxWidth: 300,
+        width: 300,
+        maxHeight: 200,
+        height: 200,
+        webPreferences: {
+            nativeWindowOpen: true,
+            nodeIntegration: true
+        },
+    });
+
+    winTimer.removeMenu()
+    
+    winTimer.loadURL(
+        isDev
+            ? 'http://localhost:3001'
+            : `file://${path.join(__dirname, '../src/components/timer/timer.js')}`
+    );
+})
+
+ipcMain.on('open-todo-window', () => {
+    const winTimer = new BrowserWindow({
+        maxWidth: 300,
+        width: 300,
+        maxHeight: 600,
+        height: 600,
+        webPreferences: {
+            nativeWindowOpen: true,
+            nodeIntegration: true
+        },
+    });
+
+    winTimer.removeMenu()
+    
+    winTimer.loadURL(
+        isDev
+            ? 'http://localhost:3001'
+            : `file://${path.join(__dirname, '../src/components/todo/todo.js')}`
+    );
+})

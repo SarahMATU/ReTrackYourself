@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { useRef, useState } from 'react';
 
-function Timer() {
+export default function Timer() {
 
     const Ref = useRef(null);
 
@@ -51,5 +50,3 @@ function Timer() {
         </div>
     );
 }
-
-export default Timer;

@@ -1,19 +1,28 @@
+:root {
+  --main--color: #899ec9;
+  --widget--color: #6a83b5;
+  --shadow-color: #556d9d;
+  --background-color: #7084ab;
+  --headfoot-color: #626ec0;
+  --button-color: rgb(60, 139, 163);
+  --button-hover: rgb(43, 112, 133);
+}
+
 .App {
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #7084ab;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  background-color: var(--background-color);
+  overflow: hidden;
 }
 
 .Header {
-  background-color: #626ec0;
+  background-color: var(--headfoot-color);
   border-radius: 10px;
   padding: 8px;
 }
 
 .Body {
-  height: 471px;
+  height: 487px;
   width: 99%;
   display: flex;
   flex-direction: row;
@@ -32,36 +41,42 @@
   overflow-y: scroll;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: #899ec9;
+  background-color: var(--main--color);
   padding: 8px;
   display: flex;
 }
 
 .Timer {
-  background-color: #899ec9;
+  border-radius: 10px;
+  background-color: var(--widget--color);
   padding: 8px;
 }
 
 .Timer:hover {
-  background-color: #67799d;
+  border-radius: 10px;
+  background-color: var(--shadow--color);
 }
 
-.ToDO {
-  background-color: #899ec9;
+.Todo {
+  border-radius: 10px;
+  background-color: var(--widget--color);
   padding: 8px;
 }
 
-.ToDO:hover {
-  background-color: #67799d;
+.Todo:hover {
+  border-radius: 10px;
+  background-color: var(--shadow--color);
 }
 
 .Reminder {
-  background-color: #899ec9;
+  border-radius: 10px;
+  background-color: var(--widget--color);
   padding: 8px;
 }
 
 .Reminder:hover {
-  background-color: #67799d;
+  border-radius: 10px;
+  background-color: var(--shadow--color);
 }
 
 .Settings {
@@ -71,35 +86,34 @@
   margin-right: 15px;
   display: flex;
   flex-direction: column;
-  background-color: #899ec9;
+  background-color: var(--main--color);
   padding: 8px;
 }
 
 .Footer {
-  background-color: #626ec0;
+  background-color: var(--headfoot-color);
   padding: 8px;
   border-radius: 10px;
 }
 
 .widgetImg{
-  height: 100%;
-  width: 100%;
+  height: 50%;
+  width: 50%;
   object-fit: contain;
-
 }
 
 .addButton {
   border-radius: 80px;
   padding: 20px 30px;
-  background-color: rgb(67, 52, 121);
+  background-color: var(--button-color);
   border: none;
   font-size: 20px;
 }
 
 .addButton:hover {
   border-radius: 80px;
-  padding: 20px 20px;
-  background-color: rgb(42, 32, 79);
+  padding: 20px 30px;
+  background-color: var(--button-hover);
   border: none;
   font-size: 20px;
 }
