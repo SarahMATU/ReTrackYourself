@@ -26,9 +26,6 @@ function createMainWindow() {
             ? 'http://localhost:3000'
             : `file://${path.join(__dirname, '../src/App.js')}`
     );
-
-    win.webContents.openDevTools({ mode: "detach" })
-    
 }
 
 // This method will be called when Electron has finished
