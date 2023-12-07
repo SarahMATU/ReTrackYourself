@@ -85,7 +85,7 @@ ipcMain.on('open-todo-window', () => {
 
     winTodo.removeMenu()
 
-    winTodo.loadURL(`file://${path.join(__dirname, '../src/components/timer/timer.js')}`);
+    winTodo.loadURL(`file://${path.join(__dirname, '../src/components/todo/todo.js')}`);
     
     //winTodo.loadFile('src/components/todo/todo.js');
 
