@@ -63,19 +63,19 @@ ipcMain.on('open-timer-window', () => {
             nativeWindowOpen: true,
             nodeIntegration: true
         },
+
+        
     });
 
     winTimer.removeMenu()
     
-    winTimer.loadURL(
-        isDev
-            ? 'http://localhost:3001'
-            : `file://${path.join(__dirname, '../src/components/timer/timer.js')}`
-    );
+    winTimer.loadFile('src/components/timer/timer.js');
+
+    winTimer.webContents.openDevTools({ mode: "detach" })
 })
 
 ipcMain.on('open-todo-window', () => {
-    const winTimer = new BrowserWindow({
+    const winTodo = new BrowserWindow({
         maxWidth: 300,
         width: 300,
         maxHeight: 600,
@@ -86,11 +86,11 @@ ipcMain.on('open-todo-window', () => {
         },
     });
 
-    winTimer.removeMenu()
+    winTodo.removeMenu()
+
+    winTodo.loadURL(`file://${path.join(__dirname, '../src/components/timer/timer.js')}`);
     
-    winTimer.loadURL(
-        isDev
-            ? 'http://localhost:3001'
-            : `file://${path.join(__dirname, '../src/components/todo/todo.js')}`
-    );
+    //winTodo.loadFile('src/components/todo/todo.js');
+
+    winTodo.webContents.openDevTools({ mode: "detach" })
 })

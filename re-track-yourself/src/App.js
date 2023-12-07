@@ -22,7 +22,7 @@ class App extends React.Component{
         <div className='Widgets'>
 
           <div className='Timer'>Timer</div>
-          <img className='widgetImg' src="../src/components/timer/timerPlace.jpg" alt="timer"></img>
+          <img className='widgetImg' src= "" alt="timer"></img>
 
           <div className='Todo'>To-Do</div>
           <img className='widgetImg' src="src/components/timer/timerPlace.jpg" alt='todo'></img>
