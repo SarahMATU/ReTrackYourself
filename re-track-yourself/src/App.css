@@ -10,33 +10,7 @@
 
 .App {
   text-align: center;
-
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-}
-
-.Header {
-  background-color: #203cf2;
-  padding: 8px;
-}
-
-.Body {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px;
-}
-
-.Widgets {
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-  overflow-y: scroll;
-  flex-direction: column;
-  background-color: #89c9b4;
-  padding: 8px;
-
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-color);
   overflow: hidden;
 }
@@ -67,7 +41,7 @@
   overflow-y: scroll;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: var(--main--color);
+  background-color: var(--main--color); 
   padding: 8px;
   display: flex;
 }
@@ -110,59 +84,8 @@
   height: 80%;
   width: 50%;
   margin-right: 15px;
-
-  display: flex;
-}
-
-.Timer {
-
-  background-color: #89c9b4;
-  padding: 8px;
-  flex-direction: column;
-
-  
-}
-
-.ToDO {
-  background-color: #89c9b4;
-  padding: 8px;
-}
-
-.Reminder {
-  background-color: #89c9b4;
-  padding: 8px;
-}
-
-.Settings {
-  border-radius: 10px;
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #89c9b4;
-  padding: 8px;
-}
-
-.Footer {
-  background-color: #523c34;
-  padding: 8px;
-}
-
-.addButton {
-  border-radius: 80px;
-  padding: 20px 20px;
-  background-color: coral;
-  border: none;
-  font-size: 20px;
-}
-
-.addButton:hover {
-  border-radius: 80px;
-  padding: 20px 20px;
-  background-color: rgb(192, 88, 50);
-  border: none;
-  font-size: 20px;
-
   background-color: var(--main--color);
   padding: 8px;
 }
@@ -177,7 +100,6 @@
   height: 50%;
   width: 50%;
   object-fit: contain;
-
 }
 
 .addButton {

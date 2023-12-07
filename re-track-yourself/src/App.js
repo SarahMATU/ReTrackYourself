@@ -13,31 +13,21 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
+
 				<div className="Header">
 					<p>Header</p>
 				</div>
 
 				<div className="Body">
 					<div className="Widgets">
+
 						<div className="Timer">Timer</div>
-						<img className="widgetImg" src="" alt="timer"></img>
-
 						<div className="Todo">To-Do</div>
-						<img
-							className="widgetImg"
-							src="src/components/timer/timerPlace.jpg"
-							alt="todo"
-						></img>
-
 						<div className="Reminder">Reminder</div>
-						<img
-							className="widgetImg"
-							src="src\components\timer\timerPlace.jpg"
-							alt="reminder"
-						></img>
 					</div>
 
 					<div className="Settings">
+
 						<p>Set the time you want for this study session</p>
 						<div>
 							<input type="number"></input>
@@ -50,11 +40,14 @@ class App extends React.Component {
 						<button className="addButton" onClick={this.openTodoWindow}>
 							To-Do add
 						</button>
-					</div>
-					<div className="Footer">
-						<p>Footer</p>
+
 					</div>
 				</div>
+
+        <div className="Footer">
+						<p>Footer</p>
+				</div>
+        
 			</div>
 		);
 	}
