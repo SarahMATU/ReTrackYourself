@@ -37,21 +37,27 @@
 //     Ref.current = id;
 // }
 
-import './App.css';
-import React from 'react';
+// import './App.css';
+// import React from 'react';
 
-class Timer extends React.Component {
+// class Timer extends React.Component {
 
-    render() {
-        return (
-            <div className="App">
-                <div>
-                    <h2>Timer</h2>
-                    this is the timer
-                </div>
-            </div>
-        );
-    }
-}
+//     render() {
+//         return (
+//             <div className="App">
+//                 <div>
+//                     <h2>Timer</h2>
+//                     this is the timer
+//                 </div>
+//             </div>
+//         );
+//     }
+// }
+
+// export default Timer;
+
+const Timer = () => {
+    return <h1>Timer</h1>;
+};
 
 export default Timer;

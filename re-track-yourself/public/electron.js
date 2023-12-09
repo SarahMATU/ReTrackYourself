@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('node:path');
 const { app, BrowserWindow, ipcMain } = require('electron');
 const isDev = require('electron-is-dev');
 
@@ -24,7 +24,7 @@ function createMainWindow() {
     win.loadURL(
         isDev
             ? 'http://localhost:3000'
-            : `file://${path.join(__dirname, '../src/App.js')}`
+            : `file://${path.join(__dirname, './index.html')}`
     );
 }
 
@@ -66,7 +66,12 @@ ipcMain.on('open-timer-window', () => {
 
     winTimer.removeMenu()
     
-    winTimer.loadFile('src/components/timer/timer.js');
+    winTimer.loadURL(
+        isDev
+            ? 'http://localhost:3000/timer'
+            : `file://${path.join(__dirname, '../src/components/timer/timer.js')}`
+    );
+    //winTimer.loadFile('src/components/timer/timer.js');
 
     winTimer.webContents.openDevTools({ mode: "detach" })
 })

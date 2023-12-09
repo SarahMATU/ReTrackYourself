@@ -1,11 +1,8 @@
-import "./App.css";
+
 import React from "react";
 import { Link } from "react-router-dom";
 
 class Home extends React.Component {
-	openTimerWindow = () => {
-		window.electron.openTimerWindow();
-	};
 
 	openTodoWindow = () => {
 		window.electron.openTodoWindow();
@@ -27,7 +24,11 @@ class Home extends React.Component {
 					</div>
 
 					<div className="Settings">
-						<p>Click the widget you want to Set</p>
+
+						<button className="addButton" onClick={this.openTodoWindow}>
+							To-Do add
+						</button>
+
 					</div>
 				</div>
 
