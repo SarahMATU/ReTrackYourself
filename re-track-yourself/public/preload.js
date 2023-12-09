@@ -7,5 +7,9 @@ contextBridge.exposeInMainWorld('electron', {
 
     openTodoWindow: () => {
         ipcRenderer.send('open-todo-window');
+    },
+
+    openReminderWindow: () => {
+        ipcRenderer.send('open-reminder-window');
     }
 })

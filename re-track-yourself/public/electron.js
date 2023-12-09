@@ -19,6 +19,8 @@ function createMainWindow() {
         },
     });
 
+    win.removeMenu()
+
     // and load the index.html of the app.
     // win.loadFile("index.html");
     win.loadURL(
@@ -66,12 +68,7 @@ ipcMain.on('open-timer-window', () => {
 
     winTimer.removeMenu()
     
-    winTimer.loadURL(
-        isDev
-            ? 'http://localhost:3000/timer'
-            : `file://${path.join(__dirname, '../src/components/timer/timer.js')}`
-    );
-    //winTimer.loadFile('src/components/timer/timer.js');
+    winTimer.loadFile('src/components/timer/timer.html');
 
     winTimer.webContents.openDevTools({ mode: "detach" })
 })
@@ -90,9 +87,26 @@ ipcMain.on('open-todo-window', () => {
 
     winTodo.removeMenu()
 
-    winTodo.loadURL(`file://${path.join(__dirname, '../src/components/todo/todo.js')}`);
-    
-    //winTodo.loadFile('src/components/todo/todo.js');
+    winTodo.loadFile('src/components/todo/todo.html');
 
     winTodo.webContents.openDevTools({ mode: "detach" })
+})
+
+ipcMain.on('open-reminder-window', () => {
+    const winReminder = new BrowserWindow({
+        maxWidth: 300,
+        width: 300,
+        maxHeight: 600,
+        height: 600,
+        webPreferences: {
+            nativeWindowOpen: true,
+            nodeIntegration: true
+        },
+    });
+
+    winReminder.removeMenu()
+    
+    winReminder.loadFile('src/components/reminder/reminder.html');
+
+    winReminder.webContents.openDevTools({ mode: "detach" })
 })
