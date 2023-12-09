@@ -24,6 +24,7 @@
 }
 
 .Body {
+  background-color: var(--background-color);
   height: 487px;
   width: 99%;
   display: flex;
@@ -48,34 +49,49 @@
 }
 
 .Timer {
+  color: black;
+  text-align: center;
+  text-decoration: none;
   border-radius: 10px;
   background-color: var(--widget--color);
   padding: 8px;
 }
 
 .Timer:hover {
+  text-align: center;
+  text-decoration: none;
   border-radius: 10px;
   background-color: var(--shadow--color);
 }
 
 .Todo {
+  color: black;
+  text-align: center;
+  text-decoration: none;
   border-radius: 10px;
   background-color: var(--widget--color);
   padding: 8px;
 }
 
 .Todo:hover {
+  text-align: center;
+  text-decoration: none;
   border-radius: 10px;
   background-color: var(--shadow--color);
 }
 
 .Reminder {
+  color: black;
+  text-align: center;
+  text-decoration: none;
   border-radius: 10px;
   background-color: var(--widget--color);
   padding: 8px;
 }
 
 .Reminder:hover {
+  text-align: center;
+  text-decoration: none;
   border-radius: 10px;
   background-color: var(--shadow--color);
 }
@@ -96,7 +112,7 @@
   padding: 8px;
   border-radius: 10px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 
 }
 

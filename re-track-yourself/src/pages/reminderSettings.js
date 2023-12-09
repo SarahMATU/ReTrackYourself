@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import '../App.css'
 
 class Home extends React.Component {
 	openReminderWindow = () => {
@@ -24,12 +25,11 @@ class Home extends React.Component {
 
 					<div className="Settings">
 
-						<p>Set the time you want for this study session</p>
+						<p>Set the time you want to be Reminded for this study session</p>
 						<div>
 							<input type="number"></input>
 							<button>Set Time:</button>
 						</div>
-
 						<button className="addButton" onClick={this.openReminderWindow}>
 							Open Reminder
 						</button>
