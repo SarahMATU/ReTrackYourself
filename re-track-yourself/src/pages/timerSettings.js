@@ -13,37 +13,43 @@ class Home extends React.Component {
 		return (
 			<div className="App">
 
-				<div className="Header">
-					<p>Re-Track Yourself</p>
-				</div>
-
 				<div className="Body">
 					<div className="Widgets">
 						<Link className="Timer" to='/timer'>Timer</Link>
 						<Link className="Todo" to='/todo'>To-Do</Link>
 						<Link className="Reminder" to='/reminder'>Reminder</Link>
 					</div>
-
-					<div className="Settings">
-
-						<p>Set the time you want for this study session</p>
-						<div>
-							<input type="number"></input>
-							<button>Set Time:</button>
+					<div>
+						<div className="Information">
+							<p>The Timer allows you to set a countdown timer for your alloted study time</p>
 						</div>
 
-						<button className="addButton" onClick={this.openTimerWindow}>
-							Timer add
-						</button>
+						<div className="Settings">
+						<p>How long would you like to study for?</p>
+							<div className="sliderSettings">
+								<input type="range" list="markers" min='1' max='6'/>
 
+								<datalist id="markers">
+									<option value="1" label = '1 Hour'></option>
+									<option value="2" label = '2 Hours'></option>
+									<option value="3" label = '3 Hours'></option>
+									<option value="4" label = '4 Hours'></option>
+									<option value="5" label = '5 Hours'></option>
+									<option value="6" label = '6 Hours'></option>
+								</datalist>	
+							</div>
+							<button>Set Time:</button>
+
+							<button className="addButton" onClick={this.openTimerWindow}>
+								Add
+							</button>
+
+						</div>
 					</div>
+
 				</div>
 
-			<div className="Footer">
-				<p>Created By Sarah Mitchell</p>
 			</div>
-        
-		</div>
 		);
 	}
 }

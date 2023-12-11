@@ -12,34 +12,40 @@ class Home extends React.Component {
 		return (
 			<div className="App">
 
-				<div className="Header">
-					<p>Re-Track Yourself</p>
-				</div>
-
 				<div className="Body">
 					<div className="Widgets">
 						<Link className="Timer" to='/timer'>Timer</Link>
 						<Link className="Todo" to='/todo'>To-Do</Link>
 						<Link className="Reminder" to='/reminder'>Reminder</Link>
 					</div>
+					<div>
+						<div className="Information">
+						<p>The Reminder sets a timer for every 30 mins for you to get up and step away from the computer</p>
 
-					<div className="Settings">
-
-						<p>Set the time you want to be Reminded for this study session</p>
-						<div>
-							<input type="number"></input>
-							<button>Set Time:</button>
 						</div>
+
+						<div className="Settings">
+							<p>How many times do you want the reminder to go off?</p>
+							<div className="sliderSettings">
+								<input type="range" list="markers" min='1' max='6'/>
+
+								<datalist id="markers">
+									<option value="1" label = '1'></option>
+									<option value="2" label = '2'></option>
+									<option value="3" label = '3'></option>
+									<option value="4" label = '4'></option>
+									<option value="5" label = '5'></option>
+									<option value="6" label = '6'></option>
+								</datalist>	
+							</div>
 						<button className="addButton" onClick={this.openReminderWindow}>
-							Open Reminder
+							Add
 						</button>
 
 					</div>
+					</div>
+					
 				</div>
-
-			<div className="Footer">
-				<p>Created By Sarah Mitchell</p>
-			</div>
         
 		</div>
 		);

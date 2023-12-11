@@ -1,11 +1,11 @@
 :root {
-  --main--color: #899ec9;
-  --widget--color: #6a83b5;
-  --shadow-color: #234385;
-  --background-color: #7084ab;
+  --main--color: #888e8c;
+  --widget--color: #81607a;
+  --shadow-color: #66455f;
+  --background-color: #696969;
   --headfoot-color: #626ec0;
-  --button-color: rgb(60, 139, 163);
-  --button-hover: rgb(43, 112, 133);
+  --button-color: #81607a;
+  --button-hover: #66455f;
 }
 
 .Layout {
@@ -15,17 +15,9 @@
   overflow: hidden;
 }
 
-.Header {
-  background-color: var(--headfoot-color);
-  border-radius: 10px;
-  padding: 8px;
-  display: flex;
-  justify-content: flex-start;
-}
-
 .Body {
   background-color: var(--background-color);
-  height: 487px;
+  height: 650px;
   width: 99%;
   display: flex;
   flex-direction: row;
@@ -96,24 +88,52 @@
   background-color: var(--shadow--color);
 }
 
-.Settings {
+.Information {
+  text-align: center;
   border-radius: 10px;
-  height: 80%;
-  width: 50%;
+  width: 95%;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main--color);
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+.Settings {
+  text-align: center;
+  border-radius: 10px;
+  width: 95%;
   margin-right: 15px;
   display: flex;
   flex-direction: column;
   background-color: var(--main--color);
   padding: 8px;
 }
-
-.Footer {
-  background-color: var(--headfoot-color);
-  padding: 8px;
-  border-radius: 10px;
+.sliderSettings {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
 
+datalist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  writing-mode:horizontal-tb;
+  width: 200px;
+}
+
+option {
+  padding: 0;
+}
+
+input[type="range"] {
+  width: 200px;
+  appearance: slider-vertical;
+  margin: 0;
 }
 
 .widgetImg{
@@ -132,7 +152,7 @@
 
 .addButton:hover {
   border-radius: 80px;
-  padding: 20px 30px;
+  padding: 15px 25px;
   background-color: var(--button-hover);
   border: none;
   font-size: 20px;

@@ -58,6 +58,7 @@ ipcMain.on('open-timer-window', () => {
         width: 300,
         maxHeight: 200,
         height: 200,
+        alwaysOnTop: true,
         webPreferences: {
             nativeWindowOpen: true,
             nodeIntegration: true
@@ -79,6 +80,7 @@ ipcMain.on('open-todo-window', () => {
         width: 300,
         maxHeight: 600,
         height: 600,
+        alwaysOnTop: true,
         webPreferences: {
             nativeWindowOpen: true,
             nodeIntegration: true
@@ -98,6 +100,7 @@ ipcMain.on('open-reminder-window', () => {
         width: 300,
         maxHeight: 600,
         height: 600,
+        alwaysOnTop: true,
         webPreferences: {
             nativeWindowOpen: true,
             nodeIntegration: true

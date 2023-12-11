@@ -14,28 +14,24 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div className="App">
-
-				<div className="Header">
-					<p>Re-Track Yourself</p>
-				</div>
-
 				<div className="Body">
 					<div className="Widgets">
 						<Link className="Timer" to='/timer'>Timer</Link>
 						<Link className="Todo" to='/todo'>To-Do</Link>
 						<Link className="Reminder" to='/reminder'>Reminder</Link>
 					</div>
+					<div>
+						<div className="Information">
+							<h2>Welcome to Re-Track yourself</h2>
+							<p>Start by selecting a widget to use</p>
+						</div>
 
-					<div className="Settings">
-						<p>Click the widget you want to Set</p>
+						<div className="Settings">
+						</div>
 					</div>
-				</div>
 
-			<div className="Footer">
-				<p>Created By Sarah Mitchell</p>
+				</div>
 			</div>
-        
-		</div>
 		);
 	}
 }
