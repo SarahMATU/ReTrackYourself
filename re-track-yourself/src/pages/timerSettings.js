@@ -12,12 +12,13 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div className="App">
-
+				
 				<div className="Body">
+<div className="Header"> </div>
 					<div className="Widgets">
-						<Link className="Timer" to='/timer'>Timer</Link>
-						<Link className="Todo" to='/todo'>To-Do</Link>
-						<Link className="Reminder" to='/reminder'>Reminder</Link>
+						<Link className="widgetButton" to='/'>Home</Link>
+						<Link className="widgetButton" to='/todo'>To-Do</Link>
+						<Link className="widgetButton" to='/reminder'>Reminder</Link>
 					</div>
 					<div>
 						<div className="Information">
@@ -25,7 +26,7 @@ class Home extends React.Component {
 						</div>
 
 						<div className="Settings">
-						<p>How long would you like to study for?</p>
+						<p>How long are you planning to study for?</p>
 							<div className="sliderSettings">
 								<input type="range" list="markers" min='1' max='6'/>
 
@@ -38,7 +39,7 @@ class Home extends React.Component {
 									<option value="6" label = '6 Hours'></option>
 								</datalist>	
 							</div>
-							<button>Set Time:</button>
+							<button className="setButton">Set Time:</button>
 
 							<button className="addButton" onClick={this.openTimerWindow}>
 								Add

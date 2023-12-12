@@ -16,17 +16,14 @@ class Home extends React.Component {
 			<div className="App">
 				<div className="Body">
 					<div className="Widgets">
-						<Link className="Timer" to='/timer'>Timer</Link>
-						<Link className="Todo" to='/todo'>To-Do</Link>
-						<Link className="Reminder" to='/reminder'>Reminder</Link>
+						<Link className="widgetButton" to='/timer'>Timer</Link>
+						<Link className="widgetButton" to='/todo'>To-Do</Link>
+						<Link className="widgetButton" to='/reminder'>Reminder</Link>
 					</div>
 					<div>
 						<div className="Information">
-							<h2>Welcome to Re-Track yourself</h2>
-							<p>Start by selecting a widget to use</p>
-						</div>
-
-						<div className="Settings">
+							<h2>Welcome to Re-Track Yourself</h2>
+							<h4>Start by selecting a widget to use</h4>
 						</div>
 					</div>
 

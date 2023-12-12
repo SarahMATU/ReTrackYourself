@@ -16,9 +16,9 @@ class Home extends React.Component {
 
 				<div className="Body">
 					<div className="Widgets">
-						<Link className="Timer" to='/timer'>Timer</Link>
-						<Link className="Todo" to='/todo'>To-Do</Link>
-						<Link className="Reminder" to='/reminder'>Reminder</Link>
+						<Link className="widgetButton" to='/'>Home</Link>
+						<Link className="widgetButton" to='/timer'>Timer</Link>
+						<Link className="widgetButton" to='/reminder'>Reminder</Link>
 					</div>
 					<div>
 						<div className="Information">
