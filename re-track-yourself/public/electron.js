@@ -71,7 +71,7 @@ ipcMain.on('open-timer-window', () => {
     
     winTimer.loadFile('src/components/timer/timer.html');
 
-    winTimer.webContents.openDevTools({ mode: "detach" })
+    //winTimer.webContents.openDevTools({ mode: "detach" })
 })
 
 ipcMain.on('open-todo-window', () => {
@@ -91,7 +91,7 @@ ipcMain.on('open-todo-window', () => {
 
     winTodo.loadFile('src/components/todo/todo.html');
 
-    winTodo.webContents.openDevTools({ mode: "detach" })
+    //winTodo.webContents.openDevTools({ mode: "detach" })
 })
 
 ipcMain.on('open-reminder-window', () => {
@@ -111,5 +111,5 @@ ipcMain.on('open-reminder-window', () => {
     
     winReminder.loadFile('src/components/reminder/reminder.html');
 
-    winReminder.webContents.openDevTools({ mode: "detach" })
+    //winReminder.webContents.openDevTools({ mode: "detach" })
 })

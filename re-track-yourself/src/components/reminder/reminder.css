@@ -1,0 +1,16 @@
+:root {
+    --main--color: #888e8c;
+    --widget--color: #81607a;
+    --shadow-color: #66455f;
+    --background-color: #696969;
+    --headfoot-color: #626ec0;
+    --button-color: #81607a;
+    --button-hover: #66455f;
+  }
+
+body {
+    text-align: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  overflow: hidden;
+}

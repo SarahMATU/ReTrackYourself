@@ -29,7 +29,7 @@
 
 .Widgets {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  height: 50%;
+  height: 28%;
   width: 50%;
   margin-left: 15px;
   margin-right: 15px;
@@ -99,7 +99,7 @@ datalist {
   justify-content: space-between;
   align-items: center;
   writing-mode:horizontal-tb;
-  width: 50px;
+  width: 90px;
 }
 
 option {
@@ -107,7 +107,7 @@ option {
 }
 
 input[type="range"] {
-  width: 50px;
+  width: 90px;
   appearance: slider-vertical;
   margin: 0;
 }
