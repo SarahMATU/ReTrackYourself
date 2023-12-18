@@ -20,7 +20,7 @@ class Home extends React.Component {
 					</div>
 					<div>
 						<div className="Information">
-						<p>The Reminder sets a timer for every 30 mins for you to get up and step away from the computer</p>
+						<p>The Reminder sets an alert for you to get up and step away from the computer</p>
 
 						</div>
 
@@ -30,12 +30,12 @@ class Home extends React.Component {
 								<input type="range" list="markers" min='1' max='6'/>
 
 								<datalist id="markers">
-									<option value="1" label = '1'></option>
-									<option value="2" label = '2'></option>
-									<option value="3" label = '3'></option>
-									<option value="4" label = '4'></option>
-									<option value="5" label = '5'></option>
-									<option value="6" label = '6'></option>
+									<option value="1" label = '1 Time'></option>
+									<option value="2" label = '2 Times'></option>
+									<option value="3" label = '3 Times'></option>
+									<option value="4" label = '4 Times'></option>
+									<option value="5" label = '5 Times'></option>
+									<option value="6" label = '6 Times'></option>
 								</datalist>	
 							</div>
 						<button className="addButton" onClick={this.openReminderWindow}>
