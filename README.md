@@ -6,7 +6,7 @@ This app is designed to help you when you are studying/researching by limiting y
 ### PRE-BUILD
 To start the program 
 open the package.json file and run the *dev* command  
-`"dev": concurrently -k \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .`
+`"dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron ."`
 
 ### Included  
   
