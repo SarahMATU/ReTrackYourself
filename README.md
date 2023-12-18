@@ -12,6 +12,6 @@ open the package.json file and run the *dev* command
   
 **Timer** - This feature allows you to set a countdown timer to reference when studying. When the timer runs out you have completed your study session.
 
-**Reminder** - This feature will calculate how long you are studying for and set intervals to tell you to get up and take a quick break from your screen. It is good to get up and streach during this time.
+**Reminder** - This feature will calculate how long you are studying for and set intervals to tell you to get up and take a quick break from your screen. It is good to get up and stretch during this time.
 
 **To-Do** - This feature allows you to set clear goals to work on, and once they are complete you can check them off.  
