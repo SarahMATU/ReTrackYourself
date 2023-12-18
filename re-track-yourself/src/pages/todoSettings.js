@@ -1,11 +1,10 @@
-import "./App.css";
+
 import React from "react";
 import { Link } from "react-router-dom";
+import '../App.css'
+
 
 class Home extends React.Component {
-	openTimerWindow = () => {
-		window.electron.openTimerWindow();
-	};
 
 	openTodoWindow = () => {
 		window.electron.openTodoWindow();
@@ -14,20 +13,28 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div className="App">
+
 				<div className="Body">
 					<div className="Widgets">
+						<Link className="widgetButton" to='/'>Home</Link>
 						<Link className="widgetButton" to='/timer'>Timer</Link>
-						<Link className="widgetButton" to='/todo'>To-Do</Link>
 						<Link className="widgetButton" to='/reminder'>Reminder</Link>
 					</div>
 					<div>
 						<div className="Information">
-							<h2>Welcome to Re-Track Yourself</h2>
-							<h4>Start by selecting a widget to use</h4>
+							<p>The To-Do list allows you to write down tasks that you have to complete</p>
+						</div>
+						<div className="Settings">
+
+							<button className="addButton" onClick={this.openTodoWindow}>
+								Add
+							</button>
+
 						</div>
 					</div>
 
 				</div>
+
 			</div>
 		);
 	}

@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "main": "public/electron.js",
+  "build": {
+    "win":{
+      "icon": "build/icon.png"
+    }
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -43,6 +48,7 @@
     "concurrently": "^8.2.2",
     "electron": "^27.1.0",
     "electron-is-dev": "^2.0.0",
+    "react-router-dom": "^6.20.1",
     "wait-on": "^7.2.0"
   }
 }

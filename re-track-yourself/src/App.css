@@ -1,32 +1,26 @@
 :root {
-  --main--color: #899ec9;
-  --widget--color: #6a83b5;
-  --shadow-color: #556d9d;
-  --background-color: #7084ab;
+  --main--color: #888e8c;
+  --widget--color: #81607a;
+  --shadow-color: #66455f;
+  --background-color: #696969;
   --headfoot-color: #626ec0;
-  --button-color: rgb(60, 139, 163);
-  --button-hover: rgb(43, 112, 133);
+  --button-color: #81607a;
+  --button-hover: #66455f;
 }
 
-.App {
+.Layout {
   text-align: center;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-color);
   overflow: hidden;
 }
 
-.Header {
-  background-color: var(--headfoot-color);
-  border-radius: 10px;
-  padding: 8px;
-}
-
 .Body {
-  height: 487px;
+  background-color: var(--background-color);
+  height: 500px;
   width: 99%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -34,66 +28,88 @@
 }
 
 .Widgets {
-  height: 80%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  height: 28%;
   width: 50%;
+  margin-left: 15px;
   margin-right: 15px;
   border-radius: 10px;
-  overflow-y: scroll;
   flex-direction: column;
-  justify-content: space-evenly;
   background-color: var(--main--color); 
   padding: 8px;
   display: flex;
 }
 
-.Timer {
-  border-radius: 10px;
+.widgetButton {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 15px;
   background-color: var(--widget--color);
-  padding: 8px;
+  padding: 10px;
+  margin-bottom: 5px;
 }
 
-.Timer:hover {
+.widgetButton:hover {
+  text-align: center;
+  text-decoration: none;
   border-radius: 10px;
   background-color: var(--shadow--color);
 }
 
-.Todo {
+.Information {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
   border-radius: 10px;
-  background-color: var(--widget--color);
-  padding: 8px;
-}
-
-.Todo:hover {
-  border-radius: 10px;
-  background-color: var(--shadow--color);
-}
-
-.Reminder {
-  border-radius: 10px;
-  background-color: var(--widget--color);
-  padding: 8px;
-}
-
-.Reminder:hover {
-  border-radius: 10px;
-  background-color: var(--shadow--color);
-}
-
-.Settings {
-  border-radius: 10px;
-  height: 80%;
-  width: 50%;
+  width: 90%;
   margin-right: 15px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   background-color: var(--main--color);
   padding: 8px;
+  margin-bottom: 15px;
 }
 
-.Footer {
-  background-color: var(--headfoot-color);
-  padding: 8px;
+.Settings {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
   border-radius: 10px;
+  width: 90%;
+  margin-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: var(--main--color);
+  padding: 10px;
+}
+
+.sliderSettings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px;
+}
+
+datalist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  writing-mode:horizontal-tb;
+  width: 90px;
+}
+
+option {
+  padding: 0;
+}
+
+input[type="range"] {
+  width: 90px;
+  appearance: slider-vertical;
+  margin: 0;
 }
 
 .widgetImg{
@@ -104,7 +120,7 @@
 
 .addButton {
   border-radius: 80px;
-  padding: 20px 30px;
+  padding: 15px 25px;
   background-color: var(--button-color);
   border: none;
   font-size: 20px;
@@ -112,8 +128,30 @@
 
 .addButton:hover {
   border-radius: 80px;
-  padding: 20px 30px;
+  padding: 15px 25px;
   background-color: var(--button-hover);
   border: none;
+  font-size: 20px;
+}
+
+.setButton {
+  border-radius: 10px;
+  padding: 10px 10px;
+  background-color: var(--button-color);
+  border: none;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.setButton:hover {
+  border-radius: 10px;
+  padding: 10px 10px;
+  background-color: var(--button-hover);
+  border: none;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 10px;
   font-size: 20px;
 }

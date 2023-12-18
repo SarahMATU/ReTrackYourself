@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('node:path');
 const { app, BrowserWindow, ipcMain } = require('electron');
 const isDev = require('electron-is-dev');
 
@@ -9,9 +9,9 @@ function createMainWindow() {
         maxWidth: 800,
         minWidth: 800,
         width: 800,
-        maxHeight: 700,
-        minHeight: 700,
-        height: 700,
+        maxHeight: 550,
+        minHeight: 550,
+        height: 550,
         webPreferences: {
             nativeWindowOpen: true,
             nodeIntegration: true,
@@ -19,12 +19,14 @@ function createMainWindow() {
         },
     });
 
+    win.removeMenu()
+
     // and load the index.html of the app.
     // win.loadFile("index.html");
     win.loadURL(
         isDev
             ? 'http://localhost:3000'
-            : `file://${path.join(__dirname, '../src/App.js')}`
+            : `file://${path.join(__dirname, './index.html')}`
     );
 }
 
@@ -56,6 +58,7 @@ ipcMain.on('open-timer-window', () => {
         width: 300,
         maxHeight: 200,
         height: 200,
+        alwaysOnTop: true,
         webPreferences: {
             nativeWindowOpen: true,
             nodeIntegration: true
@@ -66,9 +69,9 @@ ipcMain.on('open-timer-window', () => {
 
     winTimer.removeMenu()
     
-    winTimer.loadFile('src/components/timer/timer.js');
+    winTimer.loadFile('src/components/timer/timer.html');
 
-    winTimer.webContents.openDevTools({ mode: "detach" })
+    //winTimer.webContents.openDevTools({ mode: "detach" })
 })
 
 ipcMain.on('open-todo-window', () => {
@@ -77,6 +80,7 @@ ipcMain.on('open-todo-window', () => {
         width: 300,
         maxHeight: 600,
         height: 600,
+        alwaysOnTop: true,
         webPreferences: {
             nativeWindowOpen: true,
             nodeIntegration: true
@@ -85,9 +89,27 @@ ipcMain.on('open-todo-window', () => {
 
     winTodo.removeMenu()
 
-    winTodo.loadURL(`file://${path.join(__dirname, '../src/components/todo/todo.js')}`);
-    
-    //winTodo.loadFile('src/components/todo/todo.js');
+    winTodo.loadFile('src/components/todo/todo.html');
 
-    winTodo.webContents.openDevTools({ mode: "detach" })
+    //winTodo.webContents.openDevTools({ mode: "detach" })
+})
+
+ipcMain.on('open-reminder-window', () => {
+    const winReminder = new BrowserWindow({
+        maxWidth: 300,
+        width: 300,
+        maxHeight: 600,
+        height: 600,
+        alwaysOnTop: true,
+        webPreferences: {
+            nativeWindowOpen: true,
+            nodeIntegration: true
+        },
+    });
+
+    winReminder.removeMenu()
+    
+    winReminder.loadFile('src/components/reminder/reminder.html');
+
+    //winReminder.webContents.openDevTools({ mode: "detach" })
 })

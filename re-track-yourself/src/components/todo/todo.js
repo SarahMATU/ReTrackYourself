@@ -1,18 +1,22 @@
-import './App.css';
-import React from 'react';
+function addTask() {
+  // Get the input field and value
+  var taskInput = document.getElementById("task");
+  var taskValue = taskInput.value;
 
-class Todo extends React.Component{
+  // Create a new list item and check box
+  var li = document.createElement("li");
+  var checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  li.appendChild(checkbox);
 
-  render() {
-      return (
-        <div className="App">
-            <div>
-                <h2>Todo</h2>
-                this is the todo list
-            </div>
-        </div>
-    );
-  }
+  // Add the task text to the list item
+  var textNode = document.createTextNode(taskValue);
+  li.appendChild(textNode);
+
+  // Add the list item to the task list
+  var ul = document.getElementById("task-list");
+  ul.appendChild(li);
+
+  // Clear the input field
+  taskInput.value = "";
 }
-
-export default Todo;
