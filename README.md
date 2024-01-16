@@ -5,8 +5,8 @@ This app is designed to help you when you are studying/researching by limiting y
 
 ### PRE-BUILD
 To start the program 
-cd re-track-yourself
-npm i adn npm concurrently & cross-env
+`cd re-track-yourself`,
+`npm i` then `npm concurrently cross-env`
 open the package.json file and run the *dev* command  
 `"dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron ."`
 
