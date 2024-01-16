@@ -76,8 +76,8 @@ ipcMain.on('open-timer-window', () => {
 
 ipcMain.on('open-todo-window', () => {
     const winTodo = new BrowserWindow({
-        maxWidth: 300,
-        width: 300,
+        maxWidth: 400,
+        width: 400,
         maxHeight: 600,
         height: 600,
         alwaysOnTop: true,

@@ -14,7 +14,7 @@ class Home extends React.Component {
 			<div className="App">
 				
 				<div className="Body">
-<div className="Header"> </div>
+					<div className="Header"> </div>
 					<div className="Widgets">
 						<Link className="widgetButton" to='/'>Home</Link>
 						<Link className="widgetButton" to='/todo'>To-Do</Link>
@@ -44,12 +44,9 @@ class Home extends React.Component {
 							<button className="addButton" onClick={this.openTimerWindow}>
 								Add
 							</button>
-
 						</div>
 					</div>
-
 				</div>
-
 			</div>
 		);
 	}

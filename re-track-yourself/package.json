@@ -4,7 +4,7 @@
   "private": true,
   "main": "public/electron.js",
   "build": {
-    "win":{
+    "win": {
       "icon": "build/icon.png"
     }
   },

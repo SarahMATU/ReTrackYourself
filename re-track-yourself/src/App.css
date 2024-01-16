@@ -124,6 +124,7 @@ input[type="range"] {
   background-color: var(--button-color);
   border: none;
   font-size: 20px;
+  transition: 0.3s;
 }
 
 .addButton:hover {
@@ -143,6 +144,7 @@ input[type="range"] {
   margin-right: 100px;
   margin-bottom: 10px;
   font-size: 20px;
+  transition: 0.3s;
 }
 
 .setButton:hover {
