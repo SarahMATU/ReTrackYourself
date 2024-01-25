@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import '../App.css'
 
-class Home extends React.Component {
+class ReminderOption extends React.Component {
 	openReminderWindow = () => {
 		window.electron.openReminderWindow();
 	};
@@ -48,4 +48,4 @@ class Home extends React.Component {
 	}
 }
 
-export default Home;
+export default ReminderOption;

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import '../App.css'
 
 
-class Home extends React.Component {
+class ToDoOption extends React.Component {
 
 	openTodoWindow = () => {
 		window.electron.openTodoWindow();
@@ -36,4 +36,4 @@ class Home extends React.Component {
 	}
 }
 
-export default Home;
+export default ToDoOption;

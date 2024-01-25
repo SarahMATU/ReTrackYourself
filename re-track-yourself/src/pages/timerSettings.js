@@ -1,13 +1,23 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import '../App.css'
+import '../App.css';
+import '../components/timer/timer';
 
 
-class Home extends React.Component {
+
+class TimerOption extends React.Component {
+
+	
+
 	openTimerWindow = () => {
 		window.electron.openTimerWindow();
 	};
+
+	setTime() {
+		var timeValue = document.getElementById("range").value;
+		alert(timeValue);
+	}
 
 	render() {
 		return (
@@ -28,9 +38,9 @@ class Home extends React.Component {
 						<div className="Settings">
 							<p>How long are you planning to study for?</p>
 							<div className="sliderSettings">
-								<input type="range" list="markers" min='1' max='6'/>
+								<input type="range" list="time" min='1' max='6'/>
 
-								<datalist id="markers">
+								<datalist id="time">
 									<option value="1" label = '1 Hour'></option>
 									<option value="2" label = '2 Hours'></option>
 									<option value="3" label = '3 Hours'></option>
@@ -38,9 +48,10 @@ class Home extends React.Component {
 									<option value="5" label = '5 Hours'></option>
 									<option value="6" label = '6 Hours'></option>
 								</datalist>	
+								<p><output id = 'value'></output></p>
 							</div>
 
-							<button className="setButton">Set Time:</button>
+							<button className="setButton" onClick={this.setTime}>Set Time</button>
 
 							<button className="addButton" onClick={this.openTimerWindow}>Add</button>
 						</div>
@@ -51,4 +62,4 @@ class Home extends React.Component {
 	}
 }
 
-export default Home;
+export default TimerOption;

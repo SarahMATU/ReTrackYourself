@@ -22,7 +22,6 @@ function createMainWindow() {
     win.removeMenu()
 
     // and load the index.html of the app.
-    // win.loadFile("index.html");
     win.loadURL(
         isDev
             ? 'http://localhost:3000'
