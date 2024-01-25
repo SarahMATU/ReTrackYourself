@@ -18,10 +18,10 @@ class Home extends React.Component {
 						<Link className="widgetButton" to='/timer'>Timer</Link>
 						<Link className="widgetButton" to='/todo'>To-Do</Link>
 					</div>
+
 					<div>
 						<div className="Information">
-						<p>The Reminder sets an alert for you to get up and step away from the computer</p>
-
+							<p>The Reminder sets an alert for you to get up and step away from the computer</p>
 						</div>
 
 						<div className="Settings">
@@ -37,17 +37,13 @@ class Home extends React.Component {
 									<option value="5" label = '5 Times'></option>
 									<option value="6" label = '6 Times'></option>
 								</datalist>	
-							</div>
-						<button className="addButton" onClick={this.openReminderWindow}>
-							Add
-						</button>
+						</div>
 
+							<button className="addButton" onClick={this.openReminderWindow}>Add</button>
+						</div>
 					</div>
-					</div>
-					
 				</div>
-        
-		</div>
+			</div>
 		);
 	}
 }

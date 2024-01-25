@@ -1,11 +1,10 @@
 :root {
-    --main--color: #888e8c;
-    --widget--color: #81607a;
-    --shadow-color: #66455f;
-    --background-color: #696969;
-    --headfoot-color: #626ec0;
-    --button-color: #81607a;
-    --button-hover: #66455f;
+  --main--color: #b0b0b6;
+  --background-color: #75777c;
+  --widget--color: #df7a4b;
+  --shadow-color: #b14818;
+  --button-color: #df7a4b;
+  --button-hover: #b14818;
   }
 
 body {

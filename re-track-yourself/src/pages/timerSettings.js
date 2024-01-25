@@ -14,19 +14,19 @@ class Home extends React.Component {
 			<div className="App">
 				
 				<div className="Body">
-					<div className="Header"> </div>
 					<div className="Widgets">
 						<Link className="widgetButton" to='/'>Home</Link>
 						<Link className="widgetButton" to='/todo'>To-Do</Link>
 						<Link className="widgetButton" to='/reminder'>Reminder</Link>
 					</div>
+
 					<div>
 						<div className="Information">
 							<p>The Timer allows you to set a countdown timer for your alloted study time</p>
 						</div>
 
 						<div className="Settings">
-						<p>How long are you planning to study for?</p>
+							<p>How long are you planning to study for?</p>
 							<div className="sliderSettings">
 								<input type="range" list="markers" min='1' max='6'/>
 
@@ -39,11 +39,10 @@ class Home extends React.Component {
 									<option value="6" label = '6 Hours'></option>
 								</datalist>	
 							</div>
+
 							<button className="setButton">Set Time:</button>
 
-							<button className="addButton" onClick={this.openTimerWindow}>
-								Add
-							</button>
+							<button className="addButton" onClick={this.openTimerWindow}>Add</button>
 						</div>
 					</div>
 				</div>

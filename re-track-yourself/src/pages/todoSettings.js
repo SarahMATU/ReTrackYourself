@@ -13,7 +13,6 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div className="App">
-
 				<div className="Body">
 					<div className="Widgets">
 						<Link className="widgetButton" to='/'>Home</Link>
@@ -24,17 +23,14 @@ class Home extends React.Component {
 						<div className="Information">
 							<p>The To-Do list allows you to write down tasks that you have to complete</p>
 						</div>
-						<div className="Settings">
 
+						<div className="Settings">
 							<button className="addButton" onClick={this.openTodoWindow}>
 								Add
 							</button>
-
 						</div>
 					</div>
-
 				</div>
-
 			</div>
 		);
 	}
