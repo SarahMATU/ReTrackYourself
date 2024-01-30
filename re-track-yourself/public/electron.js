@@ -70,7 +70,7 @@ ipcMain.on('open-timer-window', () => {
     
     winTimer.loadFile('src/components/timer/timer.html');
 
-    //winTimer.webContents.openDevTools({ mode: "detach" })
+    winTimer.webContents.openDevTools({ mode: "detach" })
 })
 
 ipcMain.on('open-todo-window', () => {

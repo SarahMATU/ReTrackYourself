@@ -2,23 +2,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import '../App.css';
-import '../components/timer/timer';
-
-
+import '../components/timer/timer.js';
 
 class TimerOption extends React.Component {
-
-	
 
 	openTimerWindow = () => {
 		window.electron.openTimerWindow();
 	};
 
-	setTime() {
-		var timeValue = document.getElementById("range").value;
-		alert(timeValue);
+	constructor(props) {
+		super(props);
+		this.state = {
+			selectedTime: 6,
+		};
+	};
+
+	handleSlideChange = (event) => {
+		this.setState({selectedTime: event.target.value});
+	};
+
+	sendTime = () => {
+		return this.state.selectedTime;
 	}
 
+	timeCheck = () => {
+		alert(this.state.selectedTime);
+	}
+	
 	render() {
 		return (
 			<div className="App">
@@ -38,21 +48,24 @@ class TimerOption extends React.Component {
 						<div className="Settings">
 							<p>How long are you planning to study for?</p>
 							<div className="sliderSettings">
-								<input type="range" list="time" min='1' max='6'/>
+								<input 
+								type="range" 
+								list="time" 
+								min='1' 
+								max='6'
+								value = {this.state.selectedTime}
+								onChange={this.handleSlideChange} />
 
 								<datalist id="time">
-									<option value="1" label = '1 Hour'></option>
-									<option value="2" label = '2 Hours'></option>
-									<option value="3" label = '3 Hours'></option>
-									<option value="4" label = '4 Hours'></option>
-									<option value="5" label = '5 Hours'></option>
-									<option value="6" label = '6 Hours'></option>
+									<option value="1" label = '6 Hour'></option>
+									<option value="2" label = '5 Hours'></option>
+									<option value="3" label = '4 Hours'></option>
+									<option value="4" label = '3 Hours'></option>
+									<option value="5" label = '2 Hours'></option>
+									<option value="6" label = '1 Hours'></option>
 								</datalist>	
-								<p><output id = 'value'></output></p>
 							</div>
-
-							<button className="setButton" onClick={this.setTime}>Set Time</button>
-
+							<button className="setButton" onClick={this.timeCheck}>Set Time</button>
 							<button className="addButton" onClick={this.openTimerWindow}>Add</button>
 						</div>
 					</div>
