@@ -15,8 +15,8 @@ class ReminderOption extends React.Component {
 				<div className="Body">
 					<div className="Widgets">
 						<Link className="widgetButton" to='/'>Home</Link>
-						<Link className="widgetButton" to='/timer'>Timer</Link>
-						<Link className="widgetButton" to='/todo'>To-Do</Link>
+						<Link className="widgetButton" to='/timerOption'>Timer</Link>
+						<Link className="widgetButton" to='/todoOption'>To-Do</Link>
 					</div>
 
 					<div>

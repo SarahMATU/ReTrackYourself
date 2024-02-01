@@ -1,30 +1,23 @@
-import TimerOption from "../../pages/timerSettings"
+import React from "react";
+import './timer.css';
 
-
-//let time = TimerOption.sendTime();
-let time = 0;
-
-if(time === 6) {
-    console.log('6')
+class Timer extends React.Component {
+	
+	render() {
+		return (
+			<div className="App">
+                <div>
+                    <p>Time Remaining :
+                        <p id="time"></p> 
+                    </p>
+                    <button>Start</button>
+                    <button>Stop</button>
+                    <button>On Break</button>
+                </div>
+			</div>
+		);
+	}
 }
 
-if(time === 5) {
-    
-}
-
-if(time === 4) {
-    
-}
-
-if(time === 3) {
-    
-}
-
-if(time === 2) {
-    
-}
-
-if(time === 1) {
-    
-}
+export default Timer;
 

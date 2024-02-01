@@ -67,8 +67,14 @@ ipcMain.on('open-timer-window', () => {
     });
 
     winTimer.removeMenu()
+
+    const timerURL = isDev
+    ? 'http://localhost:3000//todo#/timer'
+    : `file://${path.join(__dirname, './index.html')}`;
+
+    winTimer.loadURL(timerURL)
     
-    winTimer.loadFile('src/components/timer/timer.html');
+    //winTimer.loadFile('src/components/timer/timer.html');
 
     winTimer.webContents.openDevTools({ mode: "detach" })
 })
@@ -88,7 +94,11 @@ ipcMain.on('open-todo-window', () => {
 
     winTodo.removeMenu()
 
-    winTodo.loadFile('src/components/todo/todo.html');
+    const todoURL = isDev
+    ? 'http://localhost:3000//todo#/todo'
+    : `file://${path.join(__dirname, './index.html')}`;
+
+    winTodo.loadURL(todoURL)
 
     //winTodo.webContents.openDevTools({ mode: "detach" })
 })
@@ -108,7 +118,11 @@ ipcMain.on('open-reminder-window', () => {
 
     winReminder.removeMenu()
     
-    winReminder.loadFile('src/components/reminder/reminder.html');
+    const reminderURL = isDev
+    ? 'http://localhost:3000//todo#/reminder'
+    : `file://${path.join(__dirname, './index.html')}`;
+
+    winReminder.loadURL(reminderURL)
 
     //winReminder.webContents.openDevTools({ mode: "detach" })
 })
