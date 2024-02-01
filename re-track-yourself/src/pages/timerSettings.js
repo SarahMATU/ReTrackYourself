@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import '../App.css';
 import '../components/timer/timer.js';
 
+export function sendTime () {
+	let selectedTime = 0;
+	return this.state.selectedTime;
+}
+
 class TimerOption extends React.Component {
 
 	openTimerWindow = () => {
@@ -21,9 +26,7 @@ class TimerOption extends React.Component {
 		this.setState({selectedTime: event.target.value});
 	};
 
-	sendTime = () => {
-		return this.state.selectedTime;
-	}
+	
 
 	timeCheck = () => {
 		alert(this.state.selectedTime);
@@ -75,4 +78,4 @@ class TimerOption extends React.Component {
 	}
 }
 
-export default TimerOption;
+export default {TimerOption, sendTime, selectedTime};
