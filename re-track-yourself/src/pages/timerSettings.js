@@ -1,35 +1,25 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import Timer from "../components/timer/timer";
 import '../App.css';
-import '../components/timer/timer.js';
-
-export function sendTime () {
-	let selectedTime = 0;
-	return this.state.selectedTime;
-}
 
 class TimerOption extends React.Component {
 
-	openTimerWindow = () => {
+	openTimerWindow()  {
 		window.electron.openTimerWindow();
 	};
 
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
-			selectedTime: 6,
-		};
-	};
+			time: '1'
+		}
+		this.handleSlideChange = this.handleSlideChange.bind(this)
+	}
 
-	handleSlideChange = (event) => {
-		this.setState({selectedTime: event.target.value});
-	};
-
-	
-
-	timeCheck = () => {
-		alert(this.state.selectedTime);
+	handleSlideChange(event) {
+		this.setState({time: event.target.value})
 	}
 	
 	render() {
@@ -42,23 +32,24 @@ class TimerOption extends React.Component {
 						<Link className="widgetButton" to='/todoOption'>To-Do</Link>
 						<Link className="widgetButton" to='/reminderOption'>Reminder</Link>
 					</div>
-
-					<div>
+	
+					<div className="InfoSettings">
 						<div className="Information">
 							<p>The Timer allows you to set a countdown timer for your alloted study time</p>
 						</div>
-
+	
 						<div className="Settings">
 							<p>How long are you planning to study for?</p>
 							<div className="sliderSettings">
 								<input 
+								id="time"
 								type="range" 
 								list="time" 
 								min='1' 
-								max='6'
-								value = {this.state.selectedTime}
-								onChange={this.handleSlideChange} />
-
+								max='6' 
+								value={this.state.time}
+								onChange={this.handleSlideChange}/>
+	
 								<datalist id="time">
 									<option value="1" label = '6 Hour'></option>
 									<option value="2" label = '5 Hours'></option>
@@ -68,14 +59,15 @@ class TimerOption extends React.Component {
 									<option value="6" label = '1 Hours'></option>
 								</datalist>	
 							</div>
-							<button className="setButton" onClick={this.timeCheck}>Set Time</button>
+							<button className="setButton">{this.state.time}</button>
 							<button className="addButton" onClick={this.openTimerWindow}>Add</button>
 						</div>
 					</div>
 				</div>
+				<Timer time = {this.state.time}/>
 			</div>
 		);
 	}
 }
 
-export default {TimerOption, sendTime, selectedTime};
+export default TimerOption;

@@ -19,57 +19,16 @@
   * {
     box-sizing: border-box;
   }
-  
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-  
-  ul li {
-    margin: 5px;
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    list-style-type: none;
-    background: var(--to-do-even);
-    font-size: 18px;
-    border-radius: 10px;
-    transition: 0.2s;
-    
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  ul li:nth-child(odd) {
-    background: var(--to-do-odd);
-    border-radius: 10px;
-  }
-  
-  ul li:hover {
-    background: var(--shadow-color);
-    border-radius: 10px;
-  }
-  
-  ul li.checked {
-    background: var(--to-do-checked);
-    color: black;
+
+  todo-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+   }
+   .todo-item p {
+    color: #888;
     text-decoration: line-through;
-  }
-  
-  ul li.checked::before {
-    content: '';
-    position: absolute;
-    border-color: black;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    top: 10px;
-    left: 16px;
-    transform: rotate(45deg);
-    height: 15px;
-    width: 7px;
-  }
+   }
   
   .close {
     position: absolute;

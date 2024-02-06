@@ -8,6 +8,18 @@ class ReminderOption extends React.Component {
 		window.electron.openReminderWindow();
 	};
 
+	constructor() {
+		super();
+		this.state = {
+			times: ''
+		}
+		this.handleSlideChange = this.handleSlideChange.bind(this)
+	}
+
+	handleSlideChange(event) {
+		this.setState({timse: event.target.value})
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -19,7 +31,7 @@ class ReminderOption extends React.Component {
 						<Link className="widgetButton" to='/todoOption'>To-Do</Link>
 					</div>
 
-					<div>
+					<div className="InfoSettings">
 						<div className="Information">
 							<p>The Reminder sets an alert for you to get up and step away from the computer</p>
 						</div>
@@ -27,7 +39,12 @@ class ReminderOption extends React.Component {
 						<div className="Settings">
 							<p>How many times do you want the reminder to go off?</p>
 							<div className="sliderSettings">
-								<input type="range" list="markers" min='1' max='6'/>
+								<input 
+								type="range" 
+								list="markers" 
+								min='1' max='6' 
+								value={this.state.times}
+								onChange={this.handleSlideChange}/>
 
 								<datalist id="markers">
 									<option value="1" label = '1 Time'></option>
@@ -38,8 +55,8 @@ class ReminderOption extends React.Component {
 									<option value="6" label = '6 Times'></option>
 								</datalist>	
 						</div>
-
-							<button className="addButton" onClick={this.openReminderWindow}>Add</button>
+						<button className="setButton">{this.state.time}</button>
+						<button className="addButton" onClick={this.openReminderWindow}>Add</button>
 						</div>
 					</div>
 				</div>

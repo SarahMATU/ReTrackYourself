@@ -3,14 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class Home extends React.Component {
-	openTimerWindow = () => {
-		window.electron.openTimerWindow();
-	};
-
-	openTodoWindow = () => {
-		window.electron.openTodoWindow();
-	};
-
 	render() {
 		return (
 			<div className="App">
@@ -26,7 +18,6 @@ class Home extends React.Component {
 							<h4>Start by selecting a widget to use</h4>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		);

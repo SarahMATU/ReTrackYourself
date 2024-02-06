@@ -19,7 +19,7 @@ class ToDoOption extends React.Component {
 						<Link className="widgetButton" to='/timerOption'>Timer</Link>
 						<Link className="widgetButton" to='/reminderOption'>Reminder</Link>
 					</div>
-					<div>
+					<div className="InfoSettings">
 						<div className="Information">
 							<p>The To-Do list allows you to write down tasks that you have to complete</p>
 						</div>

@@ -9,9 +9,9 @@ function createMainWindow() {
         maxWidth: 800,
         minWidth: 800,
         width: 800,
-        maxHeight: 550,
-        minHeight: 550,
-        height: 550,
+        maxHeight: 500,
+        minHeight: 500,
+        height: 500,
         webPreferences: {
             nativeWindowOpen: true,
             nodeIntegration: true,
