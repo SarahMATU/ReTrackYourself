@@ -11,13 +11,13 @@ class ReminderOption extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			times: ''
+			times: '1'
 		}
 		this.handleSlideChange = this.handleSlideChange.bind(this)
 	}
 
 	handleSlideChange(event) {
-		this.setState({timse: event.target.value})
+		this.setState({times: event.target.value})
 	}
 
 	render() {
@@ -47,15 +47,15 @@ class ReminderOption extends React.Component {
 								onChange={this.handleSlideChange}/>
 
 								<datalist id="markers">
-									<option value="1" label = '1 Time'></option>
-									<option value="2" label = '2 Times'></option>
-									<option value="3" label = '3 Times'></option>
-									<option value="4" label = '4 Times'></option>
-									<option value="5" label = '5 Times'></option>
-									<option value="6" label = '6 Times'></option>
+									<option value="1" label = '6 Times'></option>
+									<option value="2" label = '5 Times'></option>
+									<option value="3" label = '4 Times'></option>
+									<option value="4" label = '3 Times'></option>
+									<option value="5" label = '2 Times'></option>
+									<option value="6" label = '1 Time'></option>
 								</datalist>	
 						</div>
-						<button className="setButton">{this.state.time}</button>
+						<button className="setButton">{this.state.times}</button>
 						<button className="addButton" onClick={this.openReminderWindow}>Add</button>
 						</div>
 					</div>

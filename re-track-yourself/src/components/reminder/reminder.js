@@ -7,7 +7,7 @@ class Reminder extends React.Component {
 		return (
 			<div className="App">
                 <div>
-                    <p>Time Remaining until break:
+                    <p>Time Remaining until break: 
                         <p id="time"></p> 
                     </p>
                     <button>Start Next Break</button>

@@ -4,11 +4,13 @@ import './timer.css';
 
 function Timer(props) {
 
+    console.log(props.time);
+
     return (
         <div className="App">
             <div>
                 <p>Time Remaining : 
-                    <span id="time">{props.time}</span> 
+                    <span>{props.time}</span> 
                 </p>
                 <button>Start</button>
                 <button>Stop</button>
