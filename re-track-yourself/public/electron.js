@@ -53,10 +53,10 @@ app.on('activate', () => {
 
 ipcMain.on('open-timer-window', () => {
     const winTimer = new BrowserWindow({
-        maxWidth: 300,
-        width: 300,
-        maxHeight: 200,
-        height: 200,
+        maxWidth: 400,
+        width: 400,
+        maxHeight: 400,
+        height: 400,
         alwaysOnTop: true,
         webPreferences: {
             nativeWindowOpen: true,
@@ -73,10 +73,8 @@ ipcMain.on('open-timer-window', () => {
     : `file://${path.join(__dirname, './index.html')}`;
 
     winTimer.loadURL(timerURL)
-    
-    //winTimer.loadFile('src/components/timer/timer.html');
 
-    winTimer.webContents.openDevTools({ mode: "detach" })
+    //winTimer.webContents.openDevTools({ mode: "detach" })
 })
 
 ipcMain.on('open-todo-window', () => {
@@ -100,15 +98,15 @@ ipcMain.on('open-todo-window', () => {
 
     winTodo.loadURL(todoURL)
 
-    //winTodo.webContents.openDevTools({ mode: "detach" })
+    winTodo.webContents.openDevTools({ mode: "detach" })
 })
 
 ipcMain.on('open-reminder-window', () => {
     const winReminder = new BrowserWindow({
-        maxWidth: 300,
-        width: 300,
-        maxHeight: 600,
-        height: 600,
+        maxWidth: 400,
+        width: 400,
+        maxHeight: 400,
+        height: 400,
         alwaysOnTop: true,
         webPreferences: {
             nativeWindowOpen: true,

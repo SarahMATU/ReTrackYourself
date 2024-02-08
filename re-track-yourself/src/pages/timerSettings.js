@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Timer from "../components/timer/timer";
 import '../App.css';
+import { Slider } from "@mui/material";
 
 class TimerOption extends React.Component {
 
@@ -41,25 +42,17 @@ class TimerOption extends React.Component {
 						<div className="Settings">
 							<p>How long are you planning to study for?</p>
 							<div className="sliderSettings">
-								<input 
-								id="time"
-								type="range" 
-								list="time" 
-								min='1' 
-								max='6' 
-								value={this.state.time}
-								onChange={this.handleSlideChange}/>
-	
-								<datalist id="time">
-									<option value="1" label = '6 Hour'></option>
-									<option value="2" label = '5 Hours'></option>
-									<option value="3" label = '4 Hours'></option>
-									<option value="4" label = '3 Hours'></option>
-									<option value="5" label = '2 Hours'></option>
-									<option value="6" label = '1 Hours'></option>
-								</datalist>	
+								<Slider 
+								defaultValue={1} 
+								step={1} 
+								min={1} 
+								max={6} 
+								marks 
+								onChange={this.handleSlideChange} 
+								value={this.state.time} 
+  								valueLabelDisplay="auto"/>
 							</div>
-							<button className="setButton">{this.state.time}</button>
+							<button className="setButton">{this.state.time + " Hour/s"}</button>
 							<button className="addButton" onClick={this.openTimerWindow}>Add</button>
 						</div>
 					</div>

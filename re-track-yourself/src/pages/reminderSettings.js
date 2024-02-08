@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import '../App.css'
+import { Slider } from "@mui/material";
 
 class ReminderOption extends React.Component {
 	openReminderWindow = () => {
@@ -39,23 +40,17 @@ class ReminderOption extends React.Component {
 						<div className="Settings">
 							<p>How many times do you want the reminder to go off?</p>
 							<div className="sliderSettings">
-								<input 
-								type="range" 
-								list="markers" 
-								min='1' max='6' 
-								value={this.state.times}
-								onChange={this.handleSlideChange}/>
-
-								<datalist id="markers">
-									<option value="1" label = '6 Times'></option>
-									<option value="2" label = '5 Times'></option>
-									<option value="3" label = '4 Times'></option>
-									<option value="4" label = '3 Times'></option>
-									<option value="5" label = '2 Times'></option>
-									<option value="6" label = '1 Time'></option>
-								</datalist>	
+							<Slider 
+								defaultValue={1} 
+								step={1} 
+								min={1} 
+								max={6} 
+								marks 
+								onChange={this.handleSlideChange} 
+								value={this.state.time} 
+  								valueLabelDisplay="auto"/>
 						</div>
-						<button className="setButton">{this.state.times}</button>
+						<button className="setButton">{this.state.times + " Time/s"}</button>
 						<button className="addButton" onClick={this.openReminderWindow}>Add</button>
 						</div>
 					</div>

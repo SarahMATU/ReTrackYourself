@@ -93,29 +93,16 @@
 
 .sliderSettings {
   display: flex;
+  margin-left: 20%;
   justify-content: center;
   align-items: center;
+  width: 60%;
   flex-direction: row;
   padding: 5px;
 }
 
-datalist {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  writing-mode:horizontal-tb;
-  width: 90px;
-}
-
 option {
   padding: 0;
-}
-
-input[type="range"] {
-  width: 90px;
-  appearance: slider-vertical;
-  margin: 0;
 }
 
 .widgetImg{

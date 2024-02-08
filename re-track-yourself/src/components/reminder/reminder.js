@@ -1,20 +1,25 @@
 import React from "react";
 import './reminder.css';
 
-class Reminder extends React.Component {
+function Reminder (props) {
 	
-	render() {
-		return (
-			<div className="App">
-                <div>
-                    <p>Time Remaining until break: 
-                        <p id="time"></p> 
-                    </p>
-                    <button>Start Next Break</button>
-                </div>
-			</div>
-		);
-	}
+    return (
+        <div className="App">
+            <div>
+            <div className="textBackground">
+                <p>Time Remaining until break: 
+                    <span>{props.time}</span> 
+                </p>
+            </div>
+            
+            <div className="ButtonRow">
+                <button className="setButton">Start</button>
+                <button className="setButton">Stop</button>
+                <button className="setButton">On Break</button>
+            </div>
+            </div>
+        </div>
+    );
 }
 
 export default Reminder;

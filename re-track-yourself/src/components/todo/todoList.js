@@ -1,12 +1,13 @@
 import { useState } from "react";
 import React from "react";
-import TodoItem from './todoItem'
-import './todo.css'
+import TodoItem from './todoItem';
+import { TextField } from "@mui/material";
+import './todo.css';
 
 function TodoList() {
     const [todo, setTodo] = useState([
         {
-            id:1, 
+            id: 1, 
             text: 'Study for Exam',
             completed: false
         }
@@ -17,9 +18,9 @@ function TodoList() {
     function addTodo(text) {
     
         const newTodo = {
-        id: Date.now(), 
-        text, 
-        completed: false
+            id: Date.now(), 
+            text, 
+            completed: false
         };
 
         setTodo([...todo, newTodo]);
@@ -37,24 +38,29 @@ function TodoList() {
         }))
     }
 		return (
-            <div className={'todo-list'}>
-                <input
-                value={text}
-                onChange={e => setText(e.target.value)} 
-                />
-
-                <button className={'addBtn'} onClick={() => addTodo(todo)}>Add</button>
+			<div className="list">
+                <div className="welcome">
+                <h1>Todo List</h1>
+                    <div className="control">
+                        <TextField label="Enter a task" variant="outlined" color="warning" value = {text} onChange={(e) => setText(e.target.value)}/>
+				        <button className = "addBtn" onClick={() => addTodo(text)}>Add</button>
+                    </div>
+                    
+                </div>
                 
-                {todo.map(todo => (
-                    <TodoItem
-                    key={todo.id} 
-                    todo={todo}
-                    deleteTodo={deleteTodo}
-                    toggleCompleted={toggleComplete} 
-                    />
-                ))}
-            </div>
-        );
+                <div className="todosList">
+                    {todo.map((todo) => (
+                        <TodoItem
+                            key={todo.id}
+                            todo={todo}
+                            deleteTodo={deleteTodo}
+                            toggleComplete={toggleComplete}
+                        />
+                    ))}
+                </div>
+				
+			</div>
+		);
 }
 
 export default TodoList;
