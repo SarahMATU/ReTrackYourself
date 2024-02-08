@@ -4,8 +4,10 @@
   --shadow-color: #b14818;
   --button-color: #df7a4b;
   --button-hover: #b14818;
-  --to-do-even: #f07a1a;
+  --to-do-even: #df7a4b;
+  --to-do-odd: #ca6130;
   --to-do-checked: #924f30;
+  --close-button: #962323;
 }
 
 body {
@@ -13,6 +15,11 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-width: 250px;
   background-color: var(--background-color);
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 * {
@@ -23,16 +30,16 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-
 }
 
 .welcome {
   display: flex;
   flex-direction: column;
   background-color: var(--main--color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   margin: 10px;
-  padding: 10px;
+  padding: 7px;
 }
 
 .control {
@@ -43,47 +50,61 @@ body {
 }
 
 .singleItem {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
-  background-color: var(--to-do-even);
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
+  
 }
 
-.singleItem.completed .text {
-  text-decoration: line-through;
+.singleItem.completed {
+  text-decoration: line-through 3px;
   background-color: var(--to-do-checked);
-  font-weight: 500;
+  font-weight: 400;
+}
+
+.singleItem:nth-child(even) {
+  background-color: var(--to-do-even);
+}
+
+.singleItem:nth-child(odd) {
+  background-color: var(--to-do-odd);
 }
 
 .check {
-  padding-top: 5px;
+  align-self: center;
 }
 
 .close {
-  background-color: var(--to-do-even);
+  background-color: var(--close-button);
   cursor: pointer;
-  color: white;
   border: none;
-  padding: 8px;
-  margin: 8px;
+  color: white;
+  margin: 5px;
+  border-radius: 12px;
+  padding: 5px;
 }
 
 .close:hover {
   background-color: #e44236;
   cursor: pointer;
   color: white;
+  margin: 5px;
   border-radius: 10px;
+  padding: 5px;
 }
 
 .text {
-  font-size: medium;
-  font-weight: bold;
+  font-size: 20px;
+  text-overflow: ellipsis;
+  overflow-y: hidden;
 }
 
 .addBtn {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 10px 10px;
-  border-radius: 10px;
+  border-radius: 15px;
   width: 70px;
   background: var(--button-color);
   color: black;

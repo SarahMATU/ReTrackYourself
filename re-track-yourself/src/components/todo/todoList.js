@@ -49,10 +49,11 @@ function TodoList() {
                 </div>
                 
                 <div className="todosList">
-                    {todo.map((todo) => (
+                    {todo.map((todo, index) => (
                         <TodoItem
                             key={todo.id}
                             todo={todo}
+                            index = {index}
                             deleteTodo={deleteTodo}
                             toggleComplete={toggleComplete}
                         />

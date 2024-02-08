@@ -1,5 +1,6 @@
 import React from "react";
 import { Checkbox } from "@mui/material";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import "./todo.css";
 
 function TodoItem({ todo, deleteTodo, toggleComplete }) {
@@ -14,7 +15,7 @@ function TodoItem({ todo, deleteTodo, toggleComplete }) {
                 <Checkbox color="error" checked={todo.completed} onChange={handleChange} />
             </div>
             <p className="text">{todo.text}</p>
-            <button className="close" onClick={() => deleteTodo(todo.id)}>X</button>
+            <button className={`close ${todo.completed ? 'completed' : ''}`} onClick={() => deleteTodo(todo.id)}><DeleteForeverIcon /></button>
         </div>
         
 	);
