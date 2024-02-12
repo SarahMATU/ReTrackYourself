@@ -52,7 +52,7 @@ class TimerOption extends React.Component {
 								value={this.state.time} 
   								valueLabelDisplay="auto"/>
 							</div>
-							<button className="setButton">{this.state.time + " Hour/s"}</button>
+							<button className="showButton">{this.state.time + " Hour/s"}</button>
 							<button className="addButton" onClick={this.openTimerWindow}>Add</button>
 						</div>
 					</div>

@@ -50,7 +50,7 @@ class ReminderOption extends React.Component {
 								value={this.state.time} 
   								valueLabelDisplay="auto"/>
 						</div>
-						<button className="setButton">{this.state.times + " Time/s"}</button>
+						<button className="showButton">{this.state.times + " Time/s"}</button>
 						<button className="addButton" onClick={this.openReminderWindow}>Add</button>
 						</div>
 					</div>

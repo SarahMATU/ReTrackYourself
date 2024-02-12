@@ -38,7 +38,7 @@
   display: flex;
 }
 
-.InfoSettings{
+.InfoSettings {
   margin: 5px;
   padding-bottom: 45px;
 }
@@ -128,7 +128,7 @@ option {
   font-size: 20px;
 }
 
-.setButton {
+.showButton {
   border-radius: 20px;
   padding: 10px;
   background-color: var(--button-color);

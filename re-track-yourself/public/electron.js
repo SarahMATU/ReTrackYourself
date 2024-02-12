@@ -53,10 +53,10 @@ app.on('activate', () => {
 
 ipcMain.on('open-timer-window', () => {
     const winTimer = new BrowserWindow({
-        maxWidth: 400,
-        width: 400,
-        maxHeight: 400,
-        height: 400,
+        maxWidth: 450,
+        width: 450,
+        maxHeight: 150,
+        height: 150,
         alwaysOnTop: true,
         webPreferences: {
             nativeWindowOpen: true,
@@ -103,10 +103,10 @@ ipcMain.on('open-todo-window', () => {
 
 ipcMain.on('open-reminder-window', () => {
     const winReminder = new BrowserWindow({
-        maxWidth: 400,
-        width: 400,
-        maxHeight: 400,
-        height: 400,
+        maxWidth: 450,
+        width: 450,
+        maxHeight: 150,
+        height: 150,
         alwaysOnTop: true,
         webPreferences: {
             nativeWindowOpen: true,

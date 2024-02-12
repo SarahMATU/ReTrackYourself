@@ -18,32 +18,29 @@ body {
   background-color: var(--main--color); 
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  width: 50%;
+  width: 40%;
   padding: 1px;
   margin: 8px;
 }
 
 .setButton {
-  border-radius: 10px;
-  padding: 5px 5px;
-  background-color: var(--button-color);
-  border: none;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 10px;
+  border-radius: 15px;
+  width: 100px;
+  background: var(--button-color);
+  color: black;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
   transition: 0.3s;
+  border: none;
 }
 
 .setButton:hover {
-  border-radius: 10px;
-  padding: 5px 5px;
   background-color: var(--button-hover);
-  border: none;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  font-size: 18px;
 }
 
 .ButtonRow {
