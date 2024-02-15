@@ -27,6 +27,9 @@ function createMainWindow() {
             ? 'http://localhost:3000'
             : `file://${path.join(__dirname, './index.html')}`
     );
+
+    win.webContents.openDevTools({ mode: "detach" })
+
 }
 
 // This method will be called when Electron has finished
@@ -74,7 +77,7 @@ ipcMain.on('open-timer-window', () => {
 
     winTimer.loadURL(timerURL)
 
-    //winTimer.webContents.openDevTools({ mode: "detach" })
+    winTimer.webContents.openDevTools({ mode: "detach" })
 })
 
 ipcMain.on('open-todo-window', () => {
@@ -98,7 +101,7 @@ ipcMain.on('open-todo-window', () => {
 
     winTodo.loadURL(todoURL)
 
-    winTodo.webContents.openDevTools({ mode: "detach" })
+    //winTodo.webContents.openDevTools({ mode: "detach" })
 })
 
 ipcMain.on('open-reminder-window', () => {
@@ -122,5 +125,5 @@ ipcMain.on('open-reminder-window', () => {
 
     winReminder.loadURL(reminderURL)
 
-    //winReminder.webContents.openDevTools({ mode: "detach" })
+    winReminder.webContents.openDevTools({ mode: "detach" })
 })
