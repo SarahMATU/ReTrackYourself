@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Timer from "../components/timer/timer";
-import "../App.css";
 import { Slider } from "@mui/material";
+import "../App.css";
 
 class TimerOption extends React.Component {
+
 	openTimerWindow() {
 		window.electron.openTimerWindow();
 	}
@@ -14,12 +14,16 @@ class TimerOption extends React.Component {
 		this.state = {
 			time: 3,
 		};
+		this.setTime = this.setTime.bind(this);
 		this.handleSlideChange = this.handleSlideChange.bind(this);
-		
 	}
 
 	handleSlideChange(event) {
 		this.setState({ time: event.target.value });
+	}
+
+	setTime() {
+		alert(this.state.time);
 	}
 
 	render() {
@@ -60,8 +64,8 @@ class TimerOption extends React.Component {
 									valueLabelDisplay="auto"
 								/>
 							</div>
-							<button className="showButton">
-								{this.state.time + " Hour/s"}
+							<button className="showButton" onClick={this.setTime}>
+								{this.state.time + " Hr"}
 							</button>
 							<button className="addButton" onClick={this.openTimerWindow}>
 								Add
@@ -69,7 +73,6 @@ class TimerOption extends React.Component {
 						</div>
 					</div>
 				</div>
-				<Timer time={this.state.time} />
 			</div>
 		);
 	}

@@ -1,8 +1,6 @@
 import React from "react";
 import './timer.css';
 
-
-
 function Timer(props) {
 
     const countTime = props.time*60;
@@ -13,12 +11,10 @@ function Timer(props) {
 
     function StopTimer() {
         console.log("Start");
-
     }
 
     function OnBreak() {
         console.log("Start");
-
     }
 
     console.log("Component Did Mount timer:", props.time);

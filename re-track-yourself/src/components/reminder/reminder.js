@@ -7,7 +7,7 @@ function Reminder (props) {
         <div className="App">
             <div>
             <div className="textBackground">
-                <p>Time Remaining until break: 
+                <p>Break Time in: 00:03:47
                     <span>{props.time}</span> 
                 </p>
             </div>
@@ -15,7 +15,6 @@ function Reminder (props) {
             <div className="ButtonRow">
                 <button className="setButton">Start</button>
                 <button className="setButton">Stop</button>
-                <button className="setButton">On Break</button>
             </div>
             </div>
         </div>
