@@ -8,6 +8,10 @@
       "icon": "build/icon.png"
     }
   },
+  "browser": {
+    "path": false,
+    "fs": false
+  },
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
@@ -16,6 +20,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "browserify-fs": "^1.0.0",
     "cross-env": "^7.0.3",
     "path-browserify": "^1.0.1",
     "react": "^18.2.0",
@@ -36,6 +41,7 @@
       "react-app/jest"
     ]
   },
+  
   "browserslist": {
     "production": [
       ">0.2%",

@@ -16,7 +16,7 @@
 
 .Body {
   background-color: var(--background-color);
-  height: 500px;
+  height: 460px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -27,7 +27,7 @@
 
 .Widgets {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  height: 31%;
+  height: 34%;
   width: 50%;
   margin-left: 15px;
   margin-right: 15px;

@@ -13,5 +13,11 @@ contextBridge.exposeInMainWorld('electron', {
         ipcRenderer.send('open-reminder-window');
     },
 
-    setTime: (timerSet) => ipcRenderer.send('set-time', timerSet)
+    setTime: () => {
+        ipcRenderer.send('set-time');
+    },
+
+    getTime: () => {
+        ipcRenderer.send('get-time');
+    }
 })

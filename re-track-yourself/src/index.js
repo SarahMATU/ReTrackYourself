@@ -24,7 +24,6 @@ root.render(
           <Route path='/timer' Component={Timer}/>
           <Route path='/todo' Component={Todo}/>
           <Route path='/reminder' Component={Reminder}/>
-
         </Routes> 
       </main>
     </div>

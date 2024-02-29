@@ -15,6 +15,7 @@ function createMainWindow() {
 		webPreferences: {
 			nativeWindowOpen: true,
 			nodeIntegration: true,
+			contextIsolation: true,
 			preload: path.join(__dirname, "preload.js"),
 		},
 	});
@@ -27,7 +28,7 @@ function createMainWindow() {
 			? "http://localhost:3000"
 			: `file://${path.join(__dirname, "./index.html")}`
 	);
-
+	win.webContents.openDevTools({ mode: "detach" })	
 	//win.webContents.openDevTools({ mode: "detach" })
 }
 
@@ -53,14 +54,6 @@ app.on("activate", () => {
 	}
 });
 
-ipcMain.on("set-time", handleSetTime);
-
-function handleSetTime(event, timerSet) {
-	const webContents = event.sender;
-	const win = BrowserWindow.fromWebContents(webContents);
-	win.setTime(timerSet);
-}
-
 ipcMain.on("open-timer-window", () => {
 	const winTimer = new BrowserWindow({
 		maxWidth: 450,
@@ -73,7 +66,7 @@ ipcMain.on("open-timer-window", () => {
 			nodeIntegration: true,
 		},
 	});
-
+	
 	winTimer.removeMenu();
 
 	const timerURL = isDev
@@ -81,10 +74,19 @@ ipcMain.on("open-timer-window", () => {
 		: `file://${path.join(__dirname, "./index.html")}`;
 
 	winTimer.loadURL(timerURL);
+	winTimer.webContents.openDevTools({ mode: "detach" })	
+});
 
+ipcMain.on("set-time", (event, setTime) => {
+	try {
+		console.log(setTime);
+	} catch(error) {
+		console.error(error);
+	}
+});
 
+ipcMain.on("get-time", () => {
 
-	//winTimer.webContents.openDevTools({ mode: "detach" })
 });
 
 

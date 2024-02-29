@@ -1,42 +1,63 @@
 import React from "react";
-import './timer.css';
+import "./timer.css";
 
 function Timer(props) {
 
-    const countTime = props.time*60;
+	let countTime = 0;
 
-    function StartTimer() {
-        console.log("Start");
-    }
+	const getTime = (countTime) => {
+		window.electron.getTime('get-time', (event, countTime) => {
+			console.log("Received current time in Timer.js:", countTime);
+		});
+	};
 
-    function StopTimer() {
-        console.log("Start");
-    }
+	// getTwoDigitValue = (value) => {
+	// 	if (value < 10) {
+	// 		return "0" + value;
+	// 	}
+	// 	return "" + value;
+	// };
 
-    function OnBreak() {
-        console.log("Start");
-    }
+	const startTimer = () => {
+		console.log("Start");
+	}
 
-    console.log("Component Did Mount timer:", props.time);
+	const stopTimer = () =>{
+		console.log("Stop");
+	}
 
-    return (
-        <div className="App">
-            <div>
-                <div className="textBackground">
-                    <p>Time Remaining : 
-                        <span>{countTime}</span> 
-                    </p>
-                </div>
-                
-                <div className="ButtonRow">
-                    <button className="setButton" onClick={() => StartTimer()}>Start</button>
-                    <button className="setButton" onClick={() => StopTimer()}>Stop</button>
-                    <button className="setButton" onClick={() => OnBreak()}>On Break</button>
-                </div>
-            </div>
-        </div>
-    );
+	const onBreak = () => {
+		console.log("Break");
+	}
+
+	console.log("Component Did Mount timer:", countTime);
+
+	return (
+		<div className="App">
+			<div>
+				<div className="textBackground">
+					<p>
+						Time Remaining :<span>{countTime}</span>
+					</p>
+				</div>
+
+				<div className="ButtonRow">
+					<button className="setButton" onClick={() => startTimer()}>
+						Start
+					</button>
+					<button className="setButton" onClick={() => stopTimer()}>
+						Stop
+					</button>
+					<button className="setButton" onClick={() => onBreak()}>
+						On Break
+					</button>
+					<button className="setButton" onClick={() => getTime()}>
+						GetTime
+					</button>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default Timer;
-
