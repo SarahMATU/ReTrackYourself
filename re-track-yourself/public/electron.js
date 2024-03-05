@@ -102,9 +102,6 @@ ipcMain.on("open-todo-window", () => {
 
 	winTodo.loadURL(todoURL);
 	winTodo.setIcon(path.join(__dirname, "icon.ico"))
-
-
-	//winTodo.webContents.openDevTools({ mode: "detach" })
 });
 
 ipcMain.on("open-reminder-window", () => {
