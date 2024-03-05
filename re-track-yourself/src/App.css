@@ -133,9 +133,16 @@ option {
   padding: 10px;
   background-color: var(--button-color);
   border: none;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 10px;
+  margin: 0px 50px 10px 50px;
   font-size: 20px;
   transition: 0.3s;
+}
+
+.showButton:hover {
+  border-radius: 20px;
+  padding: 10px;
+  background-color: var(--button-hover);
+  border: none;
+  margin: 0px 50px 10px 50px;
+  font-size: 20px;
 }

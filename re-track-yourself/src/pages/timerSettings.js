@@ -68,10 +68,10 @@ class TimerOption extends React.Component {
 								/>
 							</div>
 							<button className="showButton" onClick={this.setTime}>
-								{"Set" + this.state.time + " Hr"}
+								{"Hours: " + this.state.time}
 							</button>
 							<button className="addButton" onClick={this.openTimerWindow}>
-								Add
+								Add Timer Widget
 							</button>
 						</div>
 					</div>

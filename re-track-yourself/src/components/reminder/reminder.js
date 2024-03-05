@@ -2,13 +2,17 @@ import React from "react";
 import './reminder.css';
 
 function Reminder (props) {
+
+    let remind = localStorage.getItem("remind");
+
+
 	
     return (
         <div className="App">
             <div>
             <div className="textBackground">
-                <p>Break Time in: 00:03:47
-                    <span>{props.time}</span> 
+                <p>Break Time in: 
+                    <span>{remind}</span> 
                 </p>
             </div>
             

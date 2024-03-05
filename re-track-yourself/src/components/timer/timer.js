@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./timer.css";
 
 function Timer() {
 
 	let time = localStorage.getItem("time");
+	useEffect(() => {
+		
+		// if (time < 10) {
+		// 	return "0" + time;
+		// }
+		// return "" + time;
 
-	// getTwoDigitValue = (value) => {
-	// 	if (value < 10) {
-	// 		return "0" + value;
-	// 	}
-	// 	return "" + value;
-	// };
+	})
 
 	const startTimer = () => {
 		console.log("Start");
