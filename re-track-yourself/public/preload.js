@@ -13,11 +13,17 @@ contextBridge.exposeInMainWorld('electron', {
         ipcRenderer.send('open-reminder-window');
     },
 
-    setTime: () => {
-        ipcRenderer.send('set-time');
-    },
+    // setTimer: (setTime) => {
+    //     ipcRenderer.send('set-time', setTime);
+    // },
 
-    getTime: () => {
-        ipcRenderer.send('get-time');
-    }
+    // sendTimer: (setTime) => {
+    //     ipcRenderer.on('set-time-reply', (event, receivedTime) => {
+    //         console.log('Received setTime from main process:', receivedTime);
+    //         // Update the time state with the received value
+    //         setTime(receivedTime);
+    //     })
+    // }
+
+    
 })

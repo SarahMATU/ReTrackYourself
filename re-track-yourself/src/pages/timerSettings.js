@@ -23,10 +23,9 @@ class TimerOption extends React.Component {
 	}
 
 	setTime() {
-		const setTime = this.state.time
-		window.electron.setTime(setTime);
-		//alert("Sending: " + setTime + " to the timer")
-		//console.log(setTime)
+		const setTime = this.state.time;
+		alert("Sending: " + setTime + " to the timer")
+		//window.electron.setTimer(setTime);
 	}
 
 

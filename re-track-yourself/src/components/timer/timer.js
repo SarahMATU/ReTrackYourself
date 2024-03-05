@@ -1,16 +1,17 @@
 import React from "react";
+import { useState } from "react";
 import "./timer.css";
 
-function Timer(props) {
+function Timer() {
 
-	let countTime = 0;
+	let [time, SetTime] = useState(2);
 
-	const getTime = (countTime) => {
-		window.electron.getTime('get-time', (event, countTime) => {
-			console.log("Received current time in Timer.js:", countTime);
-		});
-	};
-
+	// React.useEffect(() => {
+	// 	window.electron.sendTimer().then(result => {
+	// 		SetTime(result);
+	// 	});
+	// }, []);
+	
 	// getTwoDigitValue = (value) => {
 	// 	if (value < 10) {
 	// 		return "0" + value;
@@ -30,15 +31,13 @@ function Timer(props) {
 		console.log("Break");
 	}
 
-	console.log("Component Did Mount timer:", countTime);
+	console.log("Component Did Mount timer:", time);
 
 	return (
 		<div className="App">
 			<div>
 				<div className="textBackground">
-					<p>
-						Time Remaining :<span>{countTime}</span>
-					</p>
+				<p>Time: {time}</p>
 				</div>
 
 				<div className="ButtonRow">
@@ -51,9 +50,9 @@ function Timer(props) {
 					<button className="setButton" onClick={() => onBreak()}>
 						On Break
 					</button>
-					<button className="setButton" onClick={() => getTime()}>
+					{/* <button className="setButton" onClick={() => genTime()}>
 						GetTime
-					</button>
+					</button> */}
 				</div>
 			</div>
 		</div>

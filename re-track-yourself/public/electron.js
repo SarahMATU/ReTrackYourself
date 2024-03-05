@@ -28,6 +28,8 @@ function createMainWindow() {
 			? "http://localhost:3000"
 			: `file://${path.join(__dirname, "./index.html")}`
 	);
+
+	win.setIcon(path.join(__dirname, "icon.ico"))
 	win.webContents.openDevTools({ mode: "detach" })	
 	//win.webContents.openDevTools({ mode: "detach" })
 }
@@ -74,19 +76,20 @@ ipcMain.on("open-timer-window", () => {
 		: `file://${path.join(__dirname, "./index.html")}`;
 
 	winTimer.loadURL(timerURL);
+	winTimer.setIcon(path.join(__dirname, "icon.ico"))
+
 	winTimer.webContents.openDevTools({ mode: "detach" })	
-});
 
-ipcMain.on("set-time", (event, setTime) => {
-	try {
-		console.log(setTime);
-	} catch(error) {
-		console.error(error);
-	}
-});
-
-ipcMain.on("get-time", () => {
-
+	// winTimer.once('ready-to-show', () => {
+	// 	ipcMain.on("set-time", (event, setTime) => {
+	// 		try {
+	// 			console.log(setTime + " Time Sent");
+	// 			event.reply('set-time-reply', setTime);
+	// 		} catch(error) {
+	// 			console.error(error);
+	// 		}
+	// 	});
+	// })
 });
 
 
@@ -110,6 +113,8 @@ ipcMain.on("open-todo-window", () => {
 		: `file://${path.join(__dirname, "./index.html")}`;
 
 	winTodo.loadURL(todoURL);
+	winTodo.setIcon(path.join(__dirname, "icon.ico"))
+
 
 	//winTodo.webContents.openDevTools({ mode: "detach" })
 });
@@ -134,6 +139,8 @@ ipcMain.on("open-reminder-window", () => {
 		: `file://${path.join(__dirname, "./index.html")}`;
 
 	winReminder.loadURL(reminderURL);
+	winReminder.setIcon(path.join(__dirname, "icon.ico"))
+
 
 	//winReminder.webContents.openDevTools({ mode: "detach" })
 });
