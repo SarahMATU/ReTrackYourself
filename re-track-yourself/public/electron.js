@@ -31,7 +31,6 @@ function createMainWindow() {
 
 	win.setIcon(path.join(__dirname, "icon.ico"))
 	win.webContents.openDevTools({ mode: "detach" })	
-	//win.webContents.openDevTools({ mode: "detach" })
 }
 
 // This method will be called when Electron has finished
@@ -78,18 +77,7 @@ ipcMain.on("open-timer-window", () => {
 	winTimer.loadURL(timerURL);
 	winTimer.setIcon(path.join(__dirname, "icon.ico"))
 
-	winTimer.webContents.openDevTools({ mode: "detach" })	
-
-	// winTimer.once('ready-to-show', () => {
-	// 	ipcMain.on("set-time", (event, setTime) => {
-	// 		try {
-	// 			console.log(setTime + " Time Sent");
-	// 			event.reply('set-time-reply', setTime);
-	// 		} catch(error) {
-	// 			console.error(error);
-	// 		}
-	// 	});
-	// })
+	winTimer.webContents.openDevTools({ mode: "detach" })
 });
 
 
@@ -114,9 +102,6 @@ ipcMain.on("open-todo-window", () => {
 
 	winTodo.loadURL(todoURL);
 	winTodo.setIcon(path.join(__dirname, "icon.ico"))
-
-
-	//winTodo.webContents.openDevTools({ mode: "detach" })
 });
 
 ipcMain.on("open-reminder-window", () => {

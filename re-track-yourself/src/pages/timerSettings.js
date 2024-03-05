@@ -24,10 +24,10 @@ class TimerOption extends React.Component {
 
 	setTime() {
 		const setTime = this.state.time;
-		alert("Sending: " + setTime + " to the timer")
-		//window.electron.setTimer(setTime);
+		alert("Setting: " + setTime + " to the timer")
+		localStorage.setItem("time", setTime)
+		console.log(localStorage.getItem("time"));
 	}
-
 
 	render() {
 		return (
@@ -68,7 +68,7 @@ class TimerOption extends React.Component {
 								/>
 							</div>
 							<button className="showButton" onClick={this.setTime}>
-								{this.state.time + " Hr"}
+								{"Set" + this.state.time + " Hr"}
 							</button>
 							<button className="addButton" onClick={this.openTimerWindow}>
 								Add
