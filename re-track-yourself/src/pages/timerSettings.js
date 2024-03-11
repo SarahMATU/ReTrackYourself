@@ -24,7 +24,7 @@ class TimerOption extends React.Component {
 
 	setTime() {
 		const setTime = this.state.time;
-		alert("Setting: " + setTime + " to the timer")
+		alert("Setting " + setTime + " Hours to the timer")
 		localStorage.setItem("time", setTime)
 		console.log(localStorage.getItem("time"));
 	}
@@ -48,13 +48,12 @@ class TimerOption extends React.Component {
 					<div className="InfoSettings">
 						<div className="Information">
 							<p>
-								The Timer allows you to set a countdown timer for your alloted
-								study time
+								The Timer allows you to set a countdown timer for your alloted study time
 							</p>
 						</div>
 
 						<div className="Settings">
-							<p>How long are you planning to study for?</p>
+							<p>How long are you planning to study for? Simply set the time on the slider and click the Hours Button.</p>
 							<div className="sliderSettings">
 								<Slider
 									defaultValue={1}

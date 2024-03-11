@@ -53,7 +53,7 @@ class ReminderOption extends React.Component {
 						</div>
 
 						<div className="Settings">
-							<p>How many times do you want the reminder to go off?</p>
+							<p>How many times do you want the reminder to go off? Simply set the time on the slider and click the Times Button.</p>
 							<div className="sliderSettings">
 								<Slider
 									defaultValue={1}

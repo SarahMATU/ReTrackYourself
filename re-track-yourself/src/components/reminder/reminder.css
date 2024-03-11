@@ -5,49 +5,53 @@
   --shadow-color: #b14818;
   --button-color: #df7a4b;
   --button-hover: #b14818;
-  }
+}
 
 body {
-    text-align: center;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-color);
   overflow: hidden;
 }
 
-.textBackground {
-  background-color: var(--main--color); 
-  border-radius: 10px;
+.remindBackground {
+  background-color: var(--main--color);
+  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  width: 95%;
-  padding: 1px;
-  margin: 8px;
+  width: 96%;
+  margin: 5px;
 }
 
-.setButton {
-  border-radius: 10px;
+.remind {
+  font-weight: 500;
+  font-size: x-large;
+  padding: 5px;
+  margin: 10px;
+}
+
+.setRemindButton {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 30px;
   padding: 5px 5px;
-  background-color: var(--button-color);
-  border: none;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  font-size: 18px;
+  border-radius: 10px;
+  width: 100px;
+  background: var(--button-color);
+  color: black;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
   transition: 0.3s;
+  border: none;
 }
 
 .setButton:hover {
-  border-radius: 10px;
-  padding: 5px 5px;
   background-color: var(--button-hover);
-  border: none;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  font-size: 18px;
 }
 
 .ButtonRow {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
 }

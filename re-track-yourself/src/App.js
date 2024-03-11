@@ -15,7 +15,7 @@ class Home extends React.Component {
 					<div>
 						<div className="Information">
 							<h2>Welcome to Re-Track Yourself</h2>
-							<h4>Start by selecting a widget to use</h4>
+							<h4>Start by setting your study time, then set your reminder breaks</h4>
 						</div>
 					</div>
 				</div>

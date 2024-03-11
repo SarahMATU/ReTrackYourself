@@ -1,46 +1,54 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import "./timer.css";
 
 function Timer() {
-
-	let time = localStorage.getItem("time");
-	useEffect(() => {
-		
-		// if (time < 10) {
-		// 	return "0" + time;
-		// }
-		// return "" + time;
-
-	})
+	const [disable, setDisable] = useState(false);
+	const [btn, setBtn] = useState("Pause");
+	const [time, setTimer] = useState(localStorage.getItem("time") * 3600);
+	const [timeInterval, setTimeInterval] = useState(null);
+	const [run, setRunning] = useState(false);
 
 	const startTimer = () => {
-		console.log("Start");
-	}
+		setDisable(true);
+		setRunning(true);
+		setTimeInterval(
+			setInterval(() => {
+				setTimer((prev) => prev - 1);
+			}, 1000)
+		);
+	};
 
-	const stopTimer = () =>{
-		console.log("Stop");
-	}
-
-	const onBreak = () => {
-		console.log("Break");
-	}
+	const pauseTimer = () => {
+		if (run) {
+			setBtn("Resume");
+			clearInterval(timeInterval);
+			setRunning(false);
+		} else {
+			setBtn("Pause");
+			startTimer();
+		}
+	};
 
 	return (
 		<div className="App">
 			<div>
-				<div className="textBackground">
-				<p>Time: {time}</p>
+				<div className="timerBackground">
+					<p className="timer">
+						Time: {`${Math.floor(time / 3600)}`.padStart(2, 0)}:
+						{`${Math.floor((time % 3600) / 60)}`.padStart(2, 0)}:
+						{`${time % 60}`.padStart(2, 0)}
+					</p>
 				</div>
 
 				<div className="ButtonRow">
-					<button className="setButton" onClick={() => startTimer()}>
+					<button
+						className="setTimeButton"
+						disabled={disable}
+						onClick={() => startTimer()}>
 						Start
 					</button>
-					<button className="setButton" onClick={() => stopTimer()}>
-						Stop
-					</button>
-					<button className="setButton" onClick={() => onBreak()}>
-						On Break
+					<button className="setTimeButton" onClick={() => pauseTimer()}>
+						{btn}
 					</button>
 				</div>
 			</div>
