@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import './reminder.css';
+import {BreakTimeModal} from "./breakTimeModal";
 
 function Reminder () {
     //Sets the single remind number to divide into the Orginal start time
@@ -10,20 +11,25 @@ function Reminder () {
     //Set for display time
     const [remindTime, setRemindTime] = useState(localStorage.getItem("remind")*3600);
     
+	const [timeBreak, setBreakTime] = useState(false);
+	//Used for the countdpwn function
     const [disable, setDisable] = useState(false);
 	const [timeInterval, setTimeInterval] = useState(null);
 	const [run, setRunning] = useState(false);
 
-    let breaktime = time/remind;
-
+	const breakTime = time/remind;
+    
 	const startTimer = () => {
+		setRemindTime(breakTime)
 		setDisable(true);
 		setRunning(true);
 		setTimeInterval(
 			setInterval(() => {
-                if(remind === breaktime){
+                if(remind === breakTime){
                     pauseTimer();
-                }
+                } else if(remind === 0){
+					toggleBreak();
+				}
 				else {
                     setRemindTime((prev) => prev - 1);
                 }
@@ -40,10 +46,14 @@ function Reminder () {
 		}
 	};
 
-	
+	const toggleBreak = () => {
+		setBreakTime(true);
+	}
+
     return (
 		<div className="App">
 			<div>
+
 				<div className="remindBackground">
 					<p className="remind">
 						Time: {`${Math.floor(remindTime / 3600)}`.padStart(2, 0)}:
@@ -58,7 +68,8 @@ function Reminder () {
 						onClick={() => startTimer()}>
 						Start
 					</button>
-                    <button onClick={() => pauseTimer()}></button>
+					<button className="setRemindButton" onClick={() => toggleBreak()}>Open</button>
+					{timeBreak && (<BreakTimeModal></BreakTimeModal>)}
 				</div>
 			</div>
 		</div>
