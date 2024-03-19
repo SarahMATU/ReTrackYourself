@@ -1,6 +1,5 @@
 import { Box, Modal, Typography } from "@mui/material";
-import timeBreak from "./reminder"
-import React, { useEffect } from "react";
+import React from "react";
 
 function BreakTimeModal() {
 	const [open, setOpen] = React.useState(true);
@@ -17,4 +16,4 @@ function BreakTimeModal() {
 	);
 }
 
-export {BreakTimeModal};
+export default BreakTimeModal;

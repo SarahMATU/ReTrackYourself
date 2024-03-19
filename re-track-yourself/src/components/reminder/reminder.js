@@ -1,9 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import './reminder.css';
-import {BreakTimeModal} from "./breakTimeModal";
 
 function Reminder () {
+
+	const openBreakWindow = () => {
+		window.electron.openBreakWindow();
+	};
+
     //Sets the single remind number to divide into the Orginal start time
 	const remind = localStorage.getItem("remind");
     //Gets the time set int Timer
@@ -69,7 +73,7 @@ function Reminder () {
 						Start
 					</button>
 					<button className="setRemindButton" onClick={() => toggleBreak()}>Open</button>
-					{timeBreak && (<BreakTimeModal></BreakTimeModal>)}
+					{timeBreak && openBreakWindow()}
 				</div>
 			</div>
 		</div>

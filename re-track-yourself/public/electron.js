@@ -110,6 +110,12 @@ ipcMain.on("open-reminder-window", () => {
 		width: 270,
 		maxHeight: 150,
 		height: 150,
+		// maxWidth: 800,
+		// minWidth: 800,
+		// width: 800,
+		// maxHeight: 500,
+		// minHeight: 500,
+		// height: 500,
 		alwaysOnTop: true,
 		webPreferences: {
 			nativeWindowOpen: true,
@@ -128,4 +134,31 @@ ipcMain.on("open-reminder-window", () => {
 
 
 	winReminder.webContents.openDevTools({ mode: "detach" })
+});
+
+ipcMain.on("open-break-window", () => {
+	const winBreak = new BrowserWindow({
+		maxWidth: 800,
+		minWidth: 800,
+		width: 800,
+		maxHeight: 500,
+		minHeight: 500,
+		height: 500,
+		fullscreen: true,
+		alwaysOnTop: true,
+		transparent:true,
+		webPreferences: {
+			nativeWindowOpen: true,
+			nodeIntegration: true,
+		},
+	});
+
+	winBreak.removeMenu();
+
+	const breakURL = isDev
+		? "http://localhost:3000//todo#/break"
+		: `file://${path.join(__dirname, "./index.html")}`;
+
+	winBreak.loadURL(breakURL);
+	winBreak.setIcon(path.join(__dirname, "icon.ico"))
 });

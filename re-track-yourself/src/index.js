@@ -10,6 +10,7 @@ import ToDoOption from './pages/todoSettings';
 import Timer from './components/timer/timer'
 import Reminder from './components/reminder/reminder'
 import Todo from './components/todo/todo'
+import BreakTimeModal from './components/reminder/breakTimeModal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +25,7 @@ root.render(
           <Route path='/timer' Component={Timer}/>
           <Route path='/todo' Component={Todo}/>
           <Route path='/reminder' Component={Reminder}/>
+          <Route path='/break' Component={BreakTimeModal}/>
         </Routes> 
       </main>
     </div>

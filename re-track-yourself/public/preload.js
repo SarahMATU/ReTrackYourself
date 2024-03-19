@@ -11,5 +11,9 @@ contextBridge.exposeInMainWorld('electron', {
 
     openReminderWindow: () => {
         ipcRenderer.send('open-reminder-window');
-    }    
+    },
+    
+    openBreakWindow: () => {
+        ipcRenderer.send('open-break-window');
+    },
 })
