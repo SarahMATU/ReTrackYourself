@@ -110,20 +110,21 @@ ipcMain.on("open-reminder-window", () => {
 		width: 270,
 		maxHeight: 150,
 		height: 150,
-		// maxWidth: 800,
-		// minWidth: 800,
-		// width: 800,
-		// maxHeight: 500,
-		// minHeight: 500,
-		// height: 500,
 		alwaysOnTop: true,
 		webPreferences: {
 			nativeWindowOpen: true,
 			nodeIntegration: true,
+			preload: path.join(__dirname, "preload.js"),
 		},
 	});
 
+	//const breakWin = new BrowserWindow({ parent: top, modal: true, show: false })
+
 	winReminder.removeMenu();
+
+	// const breakURL = isDev
+	// 	? "http://localhost:3000//todo#/break"
+	// 	: `file://${path.join(__dirname, "./index.html")}`;
 
 	const reminderURL = isDev
 		? "http://localhost:3000//todo#/reminder"
@@ -132,21 +133,21 @@ ipcMain.on("open-reminder-window", () => {
 	winReminder.loadURL(reminderURL);
 	winReminder.setIcon(path.join(__dirname, "icon.ico"))
 
-
 	winReminder.webContents.openDevTools({ mode: "detach" })
 });
 
 ipcMain.on("open-break-window", () => {
 	const winBreak = new BrowserWindow({
-		maxWidth: 800,
-		minWidth: 800,
-		width: 800,
+		maxWidth: 500,
+		minWidth: 500,
+		width: 500,
 		maxHeight: 500,
 		minHeight: 500,
 		height: 500,
-		fullscreen: true,
 		alwaysOnTop: true,
-		transparent:true,
+		frame: false,
+		modal:true,
+		closable:true,
 		webPreferences: {
 			nativeWindowOpen: true,
 			nodeIntegration: true,

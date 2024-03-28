@@ -52,6 +52,8 @@ function Reminder () {
 
 	const toggleBreak = () => {
 		setBreakTime(true);
+		openBreakWindow();
+		setBreakTime(false);
 	}
 
     return (
@@ -73,7 +75,6 @@ function Reminder () {
 						Start
 					</button>
 					<button className="setRemindButton" onClick={() => toggleBreak()}>Open</button>
-					{timeBreak && openBreakWindow()}
 				</div>
 			</div>
 		</div>
