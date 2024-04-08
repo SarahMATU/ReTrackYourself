@@ -57,6 +57,7 @@ app.on("activate", () => {
 
 ipcMain.on("open-timer-window", () => {
 	const winTimer = new BrowserWindow({
+		title: "Timer",
 		maxWidth: 270,
 		width: 270,
 		maxHeight: 150,
@@ -83,6 +84,7 @@ ipcMain.on("open-timer-window", () => {
 
 ipcMain.on("open-todo-window", () => {
 	const winTodo = new BrowserWindow({
+		title: "To-Do",
 		maxWidth: 400,
 		width: 400,
 		maxHeight: 600,
@@ -106,6 +108,7 @@ ipcMain.on("open-todo-window", () => {
 
 ipcMain.on("open-reminder-window", () => {
 	const winReminder = new BrowserWindow({
+		title: "Reminder",
 		maxWidth: 270,
 		width: 270,
 		maxHeight: 150,
@@ -133,11 +136,12 @@ ipcMain.on("open-reminder-window", () => {
 	winReminder.loadURL(reminderURL);
 	winReminder.setIcon(path.join(__dirname, "icon.ico"))
 
-	winReminder.webContents.openDevTools({ mode: "detach" })
+	//winReminder.webContents.openDevTools({ mode: "detach" })
 });
 
 ipcMain.on("open-break-window", () => {
 	const winBreak = new BrowserWindow({
+		title: "Break Time",
 		maxWidth: 500,
 		minWidth: 500,
 		width: 500,
@@ -145,9 +149,6 @@ ipcMain.on("open-break-window", () => {
 		minHeight: 500,
 		height: 500,
 		alwaysOnTop: true,
-		frame: false,
-		modal:true,
-		closable:true,
 		webPreferences: {
 			nativeWindowOpen: true,
 			nodeIntegration: true,
