@@ -136,7 +136,7 @@ ipcMain.on("open-reminder-window", () => {
 	winReminder.loadURL(reminderURL);
 	winReminder.setIcon(path.join(__dirname, "icon.ico"))
 
-	//winReminder.webContents.openDevTools({ mode: "detach" })
+	winReminder.webContents.openDevTools({ mode: "detach" })
 });
 
 ipcMain.on("open-break-window", () => {
@@ -163,4 +163,6 @@ ipcMain.on("open-break-window", () => {
 
 	winBreak.loadURL(breakURL);
 	winBreak.setIcon(path.join(__dirname, "icon.ico"))
+	winBreak.webContents.openDevTools({ mode: "detach" })
+
 });

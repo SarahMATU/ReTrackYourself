@@ -1,51 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
-import './reminder.css';
+import "./reminder.css";
 
-function Reminder () {
-
+function Reminder() {
 	const openBreakWindow = () => {
 		window.electron.openBreakWindow();
 	};
 
-    //Sets the single remind number to divide into the Orginal start time
+	const [btn, setBtn] = useState("Pause");
+	//Sets the single remind number to divide into the Orginal start time
 	const remind = localStorage.getItem("remind");
-    //Gets the time set int Timer
-    const time = localStorage.getItem("time")*3600;
-    //Set for display time
-    const [remindTime, setRemindTime] = useState(localStorage.getItem("remind")*3600);
-    
+	//Gets the time set int Timer
+	const time = localStorage.getItem("time") * 3600;
+	//Set for display time
+	const [remindTime, setRemindTime] = useState(
+		localStorage.getItem("remind") * 3600
+	);
 	const [timeBreak, setBreakTime] = useState(false);
-	//Used for the countdpwn function
-    const [disable, setDisable] = useState(false);
+	//Used for the countdown function
+	const [disable, setDisable] = useState(false);
 	const [timeInterval, setTimeInterval] = useState(null);
 	const [run, setRunning] = useState(false);
 
 	const breakTime = time/remind;
-    
+
+	useEffect(() => {
+		setRemindTime(breakTime);
+	}, [breakTime]);
+
 	const startTimer = () => {
-		setRemindTime(breakTime)
 		setDisable(true);
 		setRunning(true);
 		setTimeInterval(
 			setInterval(() => {
-                if(remind === breakTime){
-                    pauseTimer();
-                } else if(remind === 0){
-					toggleBreak();
-				}
-				else {
-                    setRemindTime((prev) => prev - 1);
-                }
+					setRemindTime((prev) => prev - 1);
 			}, 1000)
 		);
 	};
 
 	const pauseTimer = () => {
 		if (run) {
+			setBtn("Resume");
 			clearInterval(timeInterval);
 			setRunning(false);
 		} else {
+			setBtn("Pause");
 			startTimer();
 		}
 	};
@@ -54,12 +53,18 @@ function Reminder () {
 		setBreakTime(true);
 		openBreakWindow();
 		setBreakTime(false);
-	}
+	};
 
-    return (
+	if(remindTime <= 0){
+		toggleBreak();
+		clearInterval(timeInterval);
+		setRunning(false);
+		setRemindTime(breakTime);
+	}
+	
+	return (
 		<div className="App">
 			<div>
-
 				<div className="remindBackground">
 					<p className="remind">
 						Time: {`${Math.floor(remindTime / 3600)}`.padStart(2, 0)}:
@@ -71,10 +76,16 @@ function Reminder () {
 					<button
 						className="setRemindButton"
 						disabled={disable}
-						onClick={() => startTimer()}>
+						onClick={() => startTimer()}
+					>
 						Start
 					</button>
-					<button className="setRemindButton" onClick={() => toggleBreak()}>Open</button>
+					<button className="setRemindButton" onClick={() => pauseTimer()}>
+						{btn}
+					</button>
+					<button className="setRemindButton" onClick={() => toggleBreak()}>
+						Open
+					</button>
 				</div>
 			</div>
 		</div>
@@ -82,4 +93,3 @@ function Reminder () {
 }
 
 export default Reminder;
-
