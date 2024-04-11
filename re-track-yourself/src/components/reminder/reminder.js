@@ -83,9 +83,9 @@ function Reminder() {
 					<button className="setRemindButton" onClick={() => pauseTimer()}>
 						{btn}
 					</button>
-					<button className="setRemindButton" onClick={() => toggleBreak()}>
+					{/* <button className="setRemindButton" onClick={() => toggleBreak()}>
 						Open
-					</button>
+					</button> */}
 				</div>
 			</div>
 		</div>

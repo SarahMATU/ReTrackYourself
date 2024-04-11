@@ -40,7 +40,7 @@ function TodoList() {
 		return (
 			<div className="list">
                 <div className="welcome">
-                <h1>Todo List</h1>
+                <h1>To-do List</h1>
                     <div className="control">
                         <TextField label="Enter a task" variant="outlined" color="warning" value = {text} onChange={(e) => setText(e.target.value)}/>
 				        <button className = "addBtn" onClick={() => addTodo(text)}>Add</button>

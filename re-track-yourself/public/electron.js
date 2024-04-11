@@ -121,14 +121,7 @@ ipcMain.on("open-reminder-window", () => {
 		},
 	});
 
-	//const breakWin = new BrowserWindow({ parent: top, modal: true, show: false })
-
 	winReminder.removeMenu();
-
-	// const breakURL = isDev
-	// 	? "http://localhost:3000//todo#/break"
-	// 	: `file://${path.join(__dirname, "./index.html")}`;
-
 	const reminderURL = isDev
 		? "http://localhost:3000//todo#/reminder"
 		: `file://${path.join(__dirname, "./index.html")}`;
@@ -142,12 +135,12 @@ ipcMain.on("open-reminder-window", () => {
 ipcMain.on("open-break-window", () => {
 	const winBreak = new BrowserWindow({
 		title: "Break Time",
-		maxWidth: 500,
-		minWidth: 500,
-		width: 500,
-		maxHeight: 500,
-		minHeight: 500,
-		height: 500,
+		maxWidth: 700,
+		minWidth: 700,
+		width: 700,
+		maxHeight: 400,
+		minHeight: 400,
+		height: 400,
 		alwaysOnTop: true,
 		webPreferences: {
 			nativeWindowOpen: true,
