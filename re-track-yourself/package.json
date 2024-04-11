@@ -1,9 +1,21 @@
 {
   "name": "re-track-yourself",
-  "version": "0.1.0",
+  "author": "Sarah Mitchell",
+  "version": "1.0.0",
   "private": true,
   "main": "public/electron.js",
+
   "build": {
+    "productName": "Re-Track Yourself",
+    "appId": "com.college.retrackyourself",
+    "target": "NSIS",
+    "directories": {
+      "output": "build"
+    }, 
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    },
     "win": {
       "icon": "build/icon.png"
     }
@@ -31,9 +43,7 @@
     "dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron": "wait-on tcp:3000 && electron .",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "electron-builder"
   },
   "eslintConfig": {
     "extends": [
@@ -41,7 +51,6 @@
       "react-app/jest"
     ]
   },
-  
   "browserslist": {
     "production": [
       ">0.2%",
@@ -57,6 +66,7 @@
   "devDependencies": {
     "concurrently": "^8.2.2",
     "electron": "^27.1.0",
+    "electron-builder": "^24.13.3",
     "electron-is-dev": "^2.0.0",
     "react-router-dom": "^6.20.1",
     "wait-on": "^7.2.0"
