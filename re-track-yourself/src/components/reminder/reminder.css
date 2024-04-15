@@ -62,13 +62,13 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   margin: 5px;
   padding: 8px 16px 16px 16px;
-  margin-top: 105px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.timerBar{
+.timerBar {
   width: 650px;
 }

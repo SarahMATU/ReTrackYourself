@@ -9,7 +9,7 @@
 
 .Layout {
   text-align: center;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-color);
   overflow: hidden;
 }
@@ -34,7 +34,7 @@
   margin-bottom: 10px;
   border-radius: 10px;
   flex-direction: column;
-  background-color: var(--main--color); 
+  background-color: var(--main--color);
   padding: 8px;
   display: flex;
 }
@@ -107,7 +107,7 @@ option {
   padding: 0;
 }
 
-.widgetImg{
+.widgetImg {
   height: 50%;
   width: 50%;
   object-fit: contain;

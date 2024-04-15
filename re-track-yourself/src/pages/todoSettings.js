@@ -1,11 +1,8 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-import '../App.css'
-
+import "../App.css";
 
 class ToDoOption extends React.Component {
-
 	openTodoWindow = () => {
 		window.electron.openTodoWindow();
 	};
@@ -15,13 +12,22 @@ class ToDoOption extends React.Component {
 			<div className="App">
 				<div className="Body">
 					<div className="Widgets">
-						<Link className="widgetButton" to='/'>Home</Link>
-						<Link className="widgetButton" to='/timerOption'>Timer</Link>
-						<Link className="widgetButton" to='/reminderOption'>Reminder</Link>
+						<Link className="widgetButton" to="/">
+							Home
+						</Link>
+						<Link className="widgetButton" to="/timerOption">
+							Timer
+						</Link>
+						<Link className="widgetButton" to="/reminderOption">
+							Reminder
+						</Link>
 					</div>
 					<div className="InfoSettings">
 						<div className="Information">
-							<p>The To-Do list allows you to write down tasks that you have to complete</p>
+							<p>
+								The To-Do list allows you to write down tasks that you have to
+								complete
+							</p>
 						</div>
 
 						<div className="Settings">

@@ -13,13 +13,14 @@ function Timer() {
 		setRunning(true);
 		setTimeInterval(
 			setInterval(() => {
-				setTimer((prev) => prev - 1);
+					setTimer((prev) => prev - 1);
 			}, 1000)
 		);
 	};
 
 	const pauseTimer = () => {
 		if (run) {
+			localStorage.setItem("break", false)
 			setBtn("Resume");
 			clearInterval(timeInterval);
 			setRunning(false);
@@ -28,6 +29,16 @@ function Timer() {
 			startTimer();
 		}
 	};
+	
+	console.log(localStorage.getItem("break"));
+	if (localStorage.getItem("break") === true) {
+		pauseTimer();
+	} 
+
+	if (time <= 0) {
+		clearInterval(timeInterval);
+		setRunning(false);
+	}
 
 	return (
 		<div className="App">
@@ -44,7 +55,8 @@ function Timer() {
 					<button
 						className="setTimeButton"
 						disabled={disable}
-						onClick={() => startTimer()}>
+						onClick={() => startTimer()}
+					>
 						Start
 					</button>
 					<button className="setTimeButton" onClick={() => pauseTimer()}>

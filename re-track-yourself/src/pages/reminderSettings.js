@@ -23,8 +23,8 @@ class ReminderOption extends React.Component {
 
 	setTimes() {
 		const setTimes = this.state.times;
-		alert("Setting: " + setTimes + " Reminders")
-		localStorage.setItem("remind", setTimes)
+		alert("Setting: " + setTimes + " Reminders");
+		localStorage.setItem("remind", setTimes);
 		console.log(localStorage.getItem("remind"));
 	}
 
@@ -53,13 +53,16 @@ class ReminderOption extends React.Component {
 						</div>
 
 						<div className="Settings">
-							<p>How many times do you want the reminder to go off? Simply set the time on the slider and click the Times Button.</p>
+							<p>
+								How many times do you want the reminder to go off? Simply set
+								the time on the slider and click the Times Button.
+							</p>
 							<div className="sliderSettings">
 								<Slider
 									defaultValue={1}
 									step={1}
-									min={1}
-									max={6}
+									min={2}
+									max={7}
 									marks
 									onChange={this.handleSlideChange}
 									value={this.state.times}
