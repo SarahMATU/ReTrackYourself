@@ -5,6 +5,7 @@
 /.vscode
 /.pnp
 .pnp.js
+/re-track-yourself-win32-x64
 
 # testing
 /coverage

@@ -1,30 +1,17 @@
 {
 	"name": "re-track-yourself",
+	"productName": "Re Track Yourself",
 	"author": "Sarah Mitchell",
 	"version": "1.0.0",
-	"private": true,
 	"homepage": "./",
+	"main": "./public/electron.js",
 	"build": {
-    "asar": true,
 		"appId": "com.electron.retrackyourself",
 		"productName": "Re-Track Yourself",
-		"files": [
-			"build/**/*",
-			"node_modules/**/*"
-		],
-		"directories": {
-			"buildResources": "public"
-		},
-		"mac": {
-			"target": "dmg"
-		},
+		"extends": null,
 		"win": {
 			"target": "nsis"
-		},
-		"linux": {
-			"target": "deb"
-		},
-		"extends": null
+		}
 	},
 	"browser": {
 		"path": false,
@@ -50,8 +37,9 @@
 		"dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
 		"electron": "wait-on tcp:3000 && electron .",
 		"start": "react-scripts start",
-    "buildR": "react-scripts build",
-		"build": "electron-builder"
+		"buildR": "react-scripts build",
+		"build": "electron-builder build",
+		"package": "electron-packager . re-track-yourself --platform=win32"
 	},
 	"eslintConfig": {
 		"extends": [
