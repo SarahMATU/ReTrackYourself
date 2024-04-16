@@ -6,22 +6,24 @@
 
 # Re - Track Yourself
 
-Welcome to Re-Track Yourself, a easy to use organisation application to aid with study sessions. 
+Welcome to Re-Track Yourself, an easy-to-use time management application that can be used when studying or researching.  
 
 ## Description
 
-This program contains a desktop application, with a todo list, timer and reminder feature. These tools help you with procrastination and help you focus on the work you need to do
+This program contains a desktop application, with a to-do list, timer and reminder feature. These tools help you focus on the work you need to do and take regular breaks to promote more productivity.
 
 ### Installing
+This application is still in progress, in the end, I hope to build this application into an executable.
 
-Download the repo and open in chosen IDE.
+To open this project in an IDE:
+Copy the repo into your chosen IDE,
 You will need to install a few dependencies,
 ```
-npm i
+npm install
 ```
 If concurrently and cross-env are not working, run this to download them
 ```
-npm concurrently & cross-env
+npm i concurrently & cross-env
 ```
 
 ### Executing program
