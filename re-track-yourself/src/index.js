@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {HashRouter as Router, Route, Routes} from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import Home from './App'
 import TimerOption from './pages/timerSettings';
@@ -14,7 +14,7 @@ import BreakTimeModal from './components/reminder/breakTimeModal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
+  <HashRouter basename={'/'}>
     <div>
       <main>
         <Routes>
@@ -29,5 +29,5 @@ root.render(
         </Routes> 
       </main>
     </div>
-  </Router>
+  </HashRouter>
 );
