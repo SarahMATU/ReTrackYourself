@@ -32,7 +32,7 @@ class ToDoOption extends React.Component {
 
 						<div className="Settings">
 							<button className="addButton" onClick={this.openTodoWindow}>
-								Add To-Do Widget
+								Add To-Do List
 							</button>
 						</div>
 					</div>

@@ -73,7 +73,7 @@ class ReminderOption extends React.Component {
 								{"Times: " + this.state.times}
 							</button>
 							<button className="addButton" onClick={this.openReminderWindow}>
-								Add Reminders
+								Add Reminder Widget
 							</button>
 						</div>
 					</div>
