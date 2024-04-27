@@ -13,8 +13,9 @@ import Todo from './components/todo/todo'
 import BreakTimeModal from './components/reminder/breakTimeModal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  <HashRouter basename={'/'}>
+  <HashRouter basename='./'>
     <div>
       <main>
         <Routes>
