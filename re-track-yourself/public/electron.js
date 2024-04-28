@@ -30,7 +30,6 @@ function createMainWindow() {
 	);
 
 	win.setIcon(path.join(__dirname, "icon.ico"))
-	win.webContents.openDevTools();
 
 }
 
