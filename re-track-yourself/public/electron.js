@@ -30,7 +30,6 @@ function createMainWindow() {
 	);
 
 	win.setIcon(path.join(__dirname, "icon.ico"))
-
 }
 
 // This method will be called when Electron has finished
