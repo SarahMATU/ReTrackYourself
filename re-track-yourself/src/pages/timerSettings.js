@@ -25,7 +25,6 @@ class TimerOption extends React.Component {
 		const setTime = this.state.time;
 		alert("Setting " + setTime + " Hours to the timer");
 		localStorage.setItem("time", setTime);
-		console.log(localStorage.getItem("time"));
 	}
 
 	render() {

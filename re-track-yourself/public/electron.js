@@ -1,6 +1,6 @@
 const path = require("node:path");
 const { app, BrowserWindow, ipcMain } = require("electron");
-const isDev = require("electron-is-dev");
+const isDev = app.isPackaged ?  false : require('electron-is-dev');
 
 function createMainWindow() {
 	// Create the browser window.
@@ -30,6 +30,8 @@ function createMainWindow() {
 	);
 
 	win.setIcon(path.join(__dirname, "icon.ico"))
+	win.webContents.openDevTools();
+
 }
 
 // This method will be called when Electron has finished
@@ -72,12 +74,10 @@ ipcMain.on("open-timer-window", () => {
 
 	const timerURL = isDev
 		? "http://localhost:3000//todo#/timer"
-		: `file://${path.join(__dirname, "./index.html")}`;
+		: `file://${path.join(__dirname, "./index.html#timer")}`;
 
 	winTimer.loadURL(timerURL);
 	winTimer.setIcon(path.join(__dirname, "icon.ico"))
-	winTimer.webContents.openDevTools({ mode: "detach" })	
-
 });
 
 
@@ -99,7 +99,7 @@ ipcMain.on("open-todo-window", () => {
 
 	const todoURL = isDev
 		? "http://localhost:3000//todo#/todo"
-		: `file://${path.join(__dirname, "./index.html")}`;
+		: `file://${path.join(__dirname, "./index.html#todo")}`;
 
 	winTodo.loadURL(todoURL);
 	winTodo.setIcon(path.join(__dirname, "icon.ico"))
@@ -123,12 +123,10 @@ ipcMain.on("open-reminder-window", () => {
 	winReminder.removeMenu();
 	const reminderURL = isDev
 		? "http://localhost:3000//todo#/reminder"
-		: `file://${path.join(__dirname, "./index.html")}`;
+		: `file://${path.join(__dirname, "./index.html#reminder")}`;
 
 	winReminder.loadURL(reminderURL);
 	winReminder.setIcon(path.join(__dirname, "icon.ico"))
-	winReminder.webContents.openDevTools({ mode: "detach" })	
-
 });
 
 ipcMain.on("open-break-window", () => {
@@ -151,9 +149,8 @@ ipcMain.on("open-break-window", () => {
 
 	const breakURL = isDev
 		? "http://localhost:3000//todo#/break"
-		: `file://${path.join(__dirname, "./index.html")}`;
+		: `file://${path.join(__dirname, "./index.html#break")}`;
 
 	winBreak.loadURL(breakURL);
 	winBreak.setIcon(path.join(__dirname, "icon.ico"))
-
 });
