@@ -1,77 +1,79 @@
 {
-	"productName": "Re Track Yourself",
-	"name": "re-track-yourself",
-	"author": "Sarah Mitchell",
-	"version": "1.0.0",
-	"homepage": "./",
-	"description": "This is a time management app that can be used when studying",
-	"main": "public/electron.js",
-	"build": {
-		"appId": "com.electron.retrackyourself",
-		"productName": "Re-Track Yourself",
-		"files": [
-			"build/**/*",
-			"public/**/*",
-			"src/**/*"
-		],
-		"win": {
-			"icon": "build/icon.ico"
-		}
-	},
-	"browser": {
-		"path": false,
-		"fs": false
-	},
-	"dependencies": {
-		"@emotion/react": "^11.11.3",
-		"@emotion/styled": "^11.11.0",
-		"@mui/icons-material": "^5.15.9",
-		"@mui/material": "^5.15.7",
-		"@testing-library/jest-dom": "^5.17.0",
-		"@testing-library/react": "^13.4.0",
-		"@testing-library/user-event": "^13.5.0",
-		"asar": "^3.2.0",
-		"browserify-fs": "^1.0.0",
-		"cross-env": "^7.0.3",
-		"electron-pack": "^1.3.2",
-		"path-browserify": "^1.0.1",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-scripts": "5.0.1"
-	},
-	"scripts": {
-		"dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"package": "npm run build && electron-forge package --platform=win32",
-		"pack": "electron-builder -c.extraMetadata.main=./build/electron.js",
-		"electron-packager": ". --productName='Re-Track Yourself' --out=dist --prune --overwrite --app-version=0.0.1 --version=1.6.2 --platform=win32"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"devDependencies": {
-		"@electron-forge/cli": "^7.4.0",
-		"concurrently": "^8.2.2",
-		"electron": "^27.1.0",
-		"electron-builder": "^24.13.3",
-		"electron-is-dev": "^2.0.0",
-		"react-router-dom": "^6.20.1",
-		"wait-on": "^7.2.0"
-	}
+  "productName": "Re Track Yourself",
+  "name": "re-track-yourself",
+  "author": "Sarah Mitchell",
+  "version": "1.0.0",
+  "homepage": "./",
+  "description": "This is a time management app that can be used when studying",
+  "main": "public/electron.js",
+  "build": {
+    "appId": "com.electron.retrackyourself",
+    "productName": "Re-Track Yourself",
+    "files": [
+      "build/**/*",
+      "public/**/*",
+      "src/**/*"
+    ],
+    "win": {
+      "icon": "build/icon.ico"
+    }
+  },
+  "browser": {
+    "path": false,
+    "fs": false
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.9",
+    "@mui/material": "^5.15.7",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "asar": "^3.2.0",
+    "browserify-fs": "^1.0.0",
+    "cross-env": "^7.0.3",
+    "electron-pack": "^1.3.2",
+    "path-browserify": "^1.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "package": "electron-forge package --platform=win32"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "concurrently": "^8.2.2",
+    "electron": "^27.1.0",
+    "electron-builder": "^24.13.3",
+    "electron-is-dev": "^2.0.0",
+    "react-router-dom": "^6.20.1",
+    "wait-on": "^7.2.0"
+  },
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ]
 }
